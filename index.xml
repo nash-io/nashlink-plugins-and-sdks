@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nash Link API Documentation</title>
+    <link>https://docs-link.nash.io/</link>
+    <description>Recent content on Nash Link API Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docs-link.nash.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>API Reference</title>
+      <link>https://docs-link.nash.io/1-main/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs-link.nash.io/1-main/</guid>
+      <description>Welcome to the Nash Link API!
+This REST API is highly compatible with BitPay and BTCPay. It allows developers to interact with Nash Link securely for creating invoices as a merchant and retrieving invoices as a user.
+Introduction Payment sequence Click to enlarge:
+  SDKs  Creating an invoice with our SDK:
+ import { NashLinkApi } from &amp;#39;@neon-exchange/nash-link&amp;#39; const api = new NashLinkApi(&amp;#39;sandbox&amp;#39;, `&amp;lt;YOUR_API_KEY&amp;gt;`, `&amp;lt;YOUR_API_SECRET_KEY&amp;gt;`) const invoiceResponse = await api.</description>
+    </item>
+    
+    <item>
+      <title>API Reference</title>
+      <link>https://docs-link.nash.io/2-invoices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs-link.nash.io/2-invoices/</guid>
+      <description>Invoice API The invoice is the main data structure for payments. When a user wants to pay with Nash Link, the merchant creates an invoice for the specified amount and can optionally include further fields, such as internal order ID, redirect URL and many others.
+Create an invoice POST /invoices
+POST /invoices { &amp;quot;price&amp;quot;: 40, &amp;quot;currency&amp;quot;: &amp;quot;EUR&amp;quot; } Response: &amp;lt;InvoiceObject&amp;gt;  See also: Invoice object documentation
+ Request headers  content-type: application/json x-identity: your API key x-signature: the signature, as described here  Request body (JSON) Mandatory fields</description>
+    </item>
+    
+    <item>
+      <title>API Reference</title>
+      <link>https://docs-link.nash.io/3-resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs-link.nash.io/3-resources/</guid>
+      <description>Resources This section describes all the data structures used by the Nash Link API in detail.
+Invoice { &amp;#34;facade&amp;#34;: &amp;#34;merchant/invoice&amp;#34;, &amp;#34;data&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;JDBtJCFV&amp;#34;, &amp;#34;status&amp;#34;: &amp;#34;complete&amp;#34;, &amp;#34;price&amp;#34;: 9, &amp;#34;currency&amp;#34;: &amp;#34;EUR&amp;#34;, &amp;#34;itemDesc&amp;#34;: &amp;#34;Item XYZ&amp;#34;, &amp;#34;orderId&amp;#34;: &amp;#34;10118&amp;#34;, &amp;#34;posData&amp;#34;: &amp;#34;tx46523&amp;#34;, &amp;#34;invoiceTime&amp;#34;: 1588318118648, &amp;#34;expirationTime&amp;#34;: 1588319018648, &amp;#34;currentTime&amp;#34;: 1588325917427, &amp;#34;paidOn&amp;#34;: 1588319018644, &amp;#34;notificationEmail&amp;#34;: &amp;#34;youremail@domain.com&amp;#34;, &amp;#34;notificationURL&amp;#34;: &amp;#34;https://yourredirecturl.com&amp;#34;, &amp;#34;redirectURL&amp;#34;: &amp;#34;https://yourwebsite.com/checkout/10118&amp;#34;, &amp;#34;url&amp;#34;: &amp;#34;https://link.nash.io/widget?invoiceId=JDBtJCFV&amp;#34;, &amp;#34;transactionCurrency&amp;#34;: &amp;#34;BTC&amp;#34;, &amp;#34;amountPaid&amp;#34;: 92313, &amp;#34;displayAmountPaid&amp;#34;: &amp;#34;0.00092313&amp;#34;, &amp;#34;exchangeRates&amp;#34;: { &amp;#34;BTC&amp;#34;: { &amp;#34;EUR&amp;#34;: 9749.44 } }, &amp;#34;supportedTransactionCurrencies&amp;#34;: { &amp;#34;BTC&amp;#34;: { &amp;#34;enabled&amp;#34;: true } }, &amp;#34;paymentWalletAddress&amp;#34;: &amp;#34;bc1qx2qyua0kjzyhza5y4x9lj7mghu39sm4d0sl226&amp;#34;, &amp;#34;paymentWalletBlockchain&amp;#34;: &amp;#34;BTC&amp;#34;, &amp;#34;paymentCodes&amp;#34;: { &amp;#34;BTC&amp;#34;: { &amp;#34;BIP21&amp;#34;: &amp;#34;bitcoin:bc1qx2qyua0kjzyhza5y4x9lj7mghu39sm4d0sl226?</description>
+    </item>
+    
+    <item>
+      <title>Errors</title>
+      <link>https://docs-link.nash.io/4-errors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs-link.nash.io/4-errors/</guid>
+      <description>Errors The Nash Link API uses the following error codes:
+   Error Code Meaning     400 Bad Request &amp;ndash; Your request sucks   401 Unauthorized &amp;ndash; Your API key is incorrect   404 Not Found &amp;ndash; The specified resource could not be found   500 Internal Server Error &amp;ndash; We had a problem with our server – try again later   503 Service Unavailable &amp;ndash; We’re temporarially offline for maintanance – try again later    </description>
+    </item>
+    
+    <item>
+      <title>API Reference</title>
+      <link>https://docs-link.nash.io/5-plugins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs-link.nash.io/5-plugins/</guid>
+      <description>E-Commerce Plugins This section describes the installation of our payment plugin in various e-commerce solutions.
+Magento 2 Download Nashlink plugins and sdks zip pack.
+ Extract the downloaded zip pack The plugin is at unziped folder plugin-magento2-checkout/Nashlink/  You need access to your magento instance for ssh and/or ftp.
+As first step you need to copy Nashlink/ plugin directory to magento code path. Most common ways are via FTP or SSH.</description>
+    </item>
+    
+  </channel>
+</rss>
