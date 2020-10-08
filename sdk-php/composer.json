@@ -1,0 +1,21 @@
+{
+    "name": "nash/link",
+    "description": "NashLink PHP API",
+    "keywords": ["crypto", "payment"],
+    "type": "library",
+    "require": {
+        "php": ">=5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nash\\Link": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nash",
+            "email": "contact@nash.io"
+        }
+    ]
+}

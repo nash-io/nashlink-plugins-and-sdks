@@ -1,0 +1,9 @@
+#pay-step-1, #pay-step-2 {
+  margin-top: 40px;
+}
+
+.payment-widget {
+  border-width: 0px;
+  width: 630px;
+  height: 380px;
+}

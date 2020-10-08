@@ -1,0 +1,30 @@
+# Using https://github.com/marketplace/actions/deploy-to-github-pages
+# See also https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#onpushpull_requestbranchestags
+name: Deploy docs to Github pages
+
+on:
+  push:
+    tags:
+      - docs/*
+
+defaults:
+  run:
+    working-directory: docs
+
+jobs:
+  build_and_deploy_docs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Generate the documentation
+      run: docker run --rm -v $(pwd):/src --entrypoint /bin/sh klakegg/hugo:0.74.3-ext-alpine .docker-build-documentation.sh
+
+    - run: sudo touch public/.nojekyll
+    - name: Deploy docs 🚀
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: docs/public # The folder the action should deploy.

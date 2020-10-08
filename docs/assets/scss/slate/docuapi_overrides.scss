@@ -1,0 +1,168 @@
+// FONTS
+////////////////////
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&display=swap");
+
+$font-default-family: 'Overpass', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+// BACKGROUND COLORS
+////////////////////
+$nav-bg: #F2F6FF !default;
+$nav-subitem-bg: none !default;
+$nav-active-bg: #2484ff;
+$nav-active-parent-bg: #2484ff !default;
+$lang-select-bg: #071A3D;
+$lang-select-active-bg: #082865;
+$examples-bg: #082865 !default;
+$code-annotation-bg: #031840;
+$code-bg: #041025 !important;
+$main-bg: #ffffff !default;
+
+// TEXT COLORS
+////////////////////
+$nav-text:  #002642 !default;
+$main-text: #082865;
+
+a:active, a:hover {
+    color: #3076fe;
+}
+
+// HEADERS
+//////////////
+%header-font {
+    color: #082865;
+}
+
+.content h1 {
+    background-color: #3076FF !important;
+    margin-top: 4em !important;
+
+    a {
+        color: white !important;
+    }
+}
+
+.content h1.main-header {
+    font-size: 30px !important;
+    padding-top: 14px !important;
+    margin-top: 0em !important;
+    background-color: white !important;
+
+    a {
+        color: #082865 !important;
+    }
+}
+
+.content h2 {
+    font-size: 24px !important;
+    padding-top: 0.7em !important;
+    padding-bottom: 0.7em !important;
+    border-top: 1px solid #E0E7F1 !important;
+}
+
+// VARIOUS
+///////////////
+.toc-wrapper {
+    border-right: 1px solid #e0e7f1;
+}
+
+.toc-wrapper .logo {
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 22px !important;
+}
+
+.toc-wrapper .toc-link.active {
+    background-color: #DFEAFF !important;
+    color: #0052F3 !important;
+}
+
+.content aside {
+    color: white;
+
+    a { color: white; font-weight: bold;}
+}
+
+.content aside.notice {
+    background: #2484ff !important;
+}
+.content aside.success {
+    background: #37af42 !important;
+}
+.content aside.warning {
+    background: #FF6D6D !important;
+}
+
+// Content anchors and header links
+.content a.content-header-link {
+    text-decoration: none;
+    color: #082865;
+}
+
+.content a.content-header-link .content-header-anchor {
+    display: none;
+}
+
+.content h1:hover .content-header-anchor,
+.content h2:hover .content-header-anchor,
+.content h3:hover .content-header-anchor {
+    display: inline;
+}
+
+.content h1:hover .content-header-anchor:hover,
+.content h2:hover .content-header-anchor:hover,
+.content h3:hover .content-header-anchor:hover {
+    text-decoration: underline;
+}
+
+// tests for inline code (NOT USED)
+.code-inline .highlight {
+    background-color: none;
+}
+
+.code-inline .highlight pre {
+    background-color: white;
+    float: left !important;
+    font-size: 20px;
+}
+
+// Via NATE
+// Language selector
+.page-wrapper .lang-selector {
+    border-bottom: 5px solid #092864 !important;
+}
+
+// Search box
+.toc-wrapper>.search:before {
+    top: 20px !important;
+    color: #0052F3 !important;
+}
+
+// Table borders
+.content table th {
+    border-bottom: 1px solid #e0e7f1 !important;
+    color: #082865;
+}
+
+.content table tr:last-child {
+    border-bottom: 1px solid #e0e7f1 !important;
+}
+
+// Images in the content
+.content figure {
+    margin: 0;
+    margin-right: 50%;
+    padding: 0 28px;
+    max-width: 1200px;
+    cursor: zoom-in;
+    transition: margin 0.35s;
+    transition-timing-function: ease;
+}
+
+.content figure.zoomed {
+    margin-right: 0;
+    cursor: zoom-out;
+}
+
+.content figure img {
+    border-radius: 3px;
+}

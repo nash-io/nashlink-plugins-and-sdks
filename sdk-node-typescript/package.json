@@ -1,0 +1,32 @@
+{
+  "name": "@neon-exchange/nash-link",
+  "version": "1.0.9",
+  "description": "Nash Link SDK",
+  "main": "lib/sdk.js",
+  "typings": "lib/sdk.d.ts",
+  "repository": "https://github.com/nash-io/nashlink-plugins-and-sdks/tree/master/sdk-node-typescript",
+  "author": "Chris Hager <tom@nash.io>",
+  "license": "BSD-2-Clause",
+  "files": [
+    "src/*",
+    "lib/*"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist build lib",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' 'scripts/**/*.ts'",
+    "build": "tsc -p tsconfig.json",
+    "test": "jest"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.4",
+    "@types/node": "^14.0.24",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.2",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.6",
+    "typescript-tslint-plugin": "^0.5.5"
+  }
+}

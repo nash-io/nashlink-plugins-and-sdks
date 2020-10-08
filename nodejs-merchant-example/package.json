@@ -1,0 +1,37 @@
+{
+  "name": "merchant-backend-prototype",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf dist build",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' 'scripts/**/*.ts'",
+    "build": "tsc -p tsconfig.json",
+    "start:prod": "NODE_ENV=production node build/src/index.js",
+    "start": "node build/index.js",
+    "build_start": "yarn build && yarn start",
+    "test": "jest",
+    "docker:build": "yarn clean && yarn build && git describe --tags > build/gitinfo.txt && docker build -t merchant-backend-prototype .",
+    "docker:sh": "docker run --rm -it merchant-backend-prototype sh"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "@neon-exchange/nash-link": "^1.0.8",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.7.7",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
+    "tslint": "^6.0.0",
+    "typescript": "^3.8.3",
+    "typescript-tslint-plugin": "^0.5.5"
+  },
+  "files": [
+    "build/*",
+    "public/*",
+    "src/*"
+  ]
+}

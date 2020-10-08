@@ -1,0 +1,12 @@
+/node_modules/
+/build/
+/lib/
+test
+.idea/*
+
+coverage
+.nyc_output
+*.log
+
+package-lock.json
+/dist/

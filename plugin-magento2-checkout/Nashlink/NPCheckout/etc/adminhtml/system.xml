@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="npcheckout" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"
+                showInStore="1">
+                <label>NashLink</label>
+                <comment>
+                    <![CDATA[
+                        <div style="background-color:#082865;padding:5px;color:#ffffff"><a style="color:#ffffff;font-family:\'Ubuntu\',sans-serif;text-decoration:none;margin:15px" href="https://support.nash.io/?ref=magento" target="_blank">Support</a><a style="color:#ffffff;font-family:\'Ubuntu\',sans-serif;text-decoration:none;margin:15px" href="https://link.nash.io/auth/sign-up?ref=magento" target="_blank">Sign Up</a><a style="color:#ffffff;font-family:\'Ubuntu\',sans-serif;text-decoration:none;margin:15px" href="https://link.nash.io/auth/sign-in?ref=magento" target="_blank">Login</a></div>
+                   
+                    <script type = "text/javascript">
+                    document.getElementById('save').onclick=function(){
+                        //we have to check all the values and enable/disable based on tokens
+                        var $enabled = document.getElementById('payment_us_npcheckout_active').value;
+                        var $env_text = '';
+                            if($enabled == 1){
+                            //extension enabled, make sure values are set
+                            var $token = '';
+                            var $secret = '';
+                            var $env = document.getElementById('payment_us_npcheckout_nashlink_endpoint').value
+                            if($env == 'test'){
+                                $env_text = 'Sandbox'
+                                $token = document.getElementById('payment_us_npcheckout_nashlink_devtoken').value
+                                $secret = document.getElementById('payment_us_npcheckout_nashlink_devsecret').value
+                            }else{
+                                $env_text = 'Production'
+                                $token = document.getElementById('payment_us_npcheckout_nashlink_prodtoken').value
+                                $secret = document.getElementById('payment_us_npcheckout_nashlink_prodsecret').value
+                            }
+                            if($token == '' || $secret == ''){
+                            //disable the extension befor the form is saved and alert the user
+                                document.getElementById('payment_us_npcheckout_active').selectedIndex = 1
+                                    alert('You must set a api token and a secret for the ' +$env_text+ ' environment, NashLink Checkout will be disabled until it is set')
+                            }
+                            }//end enabled check
+                        }
+
+                    </script>
+
+                    ]]>
+                </comment>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"
+                    showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                    showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="nashlink_devtoken" translate="label" type="text" sortOrder="10" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Sandbox API key</label>
+                    <comment><![CDATA[Your <b>sandbox</b> merchant API key.  <a href = "https://link.nash.io/developers" target = "_blank">Create one here</a>.]]></comment>
+                </field>
+                <field id="nashlink_devsecret" translate="label" type="text" sortOrder="10" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Sandbox API secret key</label>
+                    <comment><![CDATA[Your <b>sandbox</b> merchant API secret key.  <a href = "https://link.nash.io/developers" target = "_blank">Create one here</a>.]]></comment>
+                </field>
+                <field id="nashlink_prodtoken" translate="label" type="text" sortOrder="10" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Production API key</label>
+                    <comment><![CDATA[Your <b>production</b> merchant API key.  <a href = "https://link.nash.io/developers" target = "_blank">Create one here</a>.]]></comment>
+                </field>
+                <field id="nashlink_prodsecret" translate="label" type="text" sortOrder="10" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Production API secret key</label>
+                    <comment><![CDATA[Your <b>production</b> merchant API secret key.  <a href = "https://link.nash.io/developers" target = "_blank">Create one here</a>.]]></comment>
+                </field>
+                <field id="nashlink_endpoint" translate="label" type="select" sortOrder="10" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Environment</label>
+                    <comment><![CDATA[Select <b>Sandbox</b> for testing the plugin, <b>Production</b> when you are ready to go live.]]></comment>
+                    <source_model>Nashlink\NPCheckout\Model\Config\Source\Environment</source_model>
+                </field>               
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="41" showInDefault="1"
+                    showInWebsite="1" showInStore="0">
+                    <label>Payment from Specific Countries</label>
+                    <source_model>Nashlink\NPCheckout\Model\Config\Source\Countries</source_model>
+                    <can_be_empty>0</can_be_empty>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"
+                    showInStore="0">
+                    <label>Sort Order</label>
+                    <frontend_class>validate-number</frontend_class>
+                </field>
+            </group>
+            <!-- payment-group -->
+        </section>
+    </system>
+</config>
