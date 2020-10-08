@@ -9,7 +9,7 @@ This section describes the installation of our payment plugin in various e-comme
 
 ## Magento 2
 
-Download [Nashlink plugins and sdks](https://github.com/nash-io/nashlink-plugins-and-sdks/archive/master.zip) zip pack.
+Download [Nashlink plugins and sdks](https://github.com/nash-io/nashlink-plugins-and-sdks/archive/main.zip) zip pack.
 
 * Extract the downloaded zip pack
 * The plugin is at unziped folder plugin-magento2-checkout/Nashlink/
@@ -54,7 +54,7 @@ Follow the instructions on plugin configuration interface to get your store read
 
 ## WooCommerce
   
-Download [Nashlink plugins and sdks](https://github.com/nash-io/nashlink-plugins-and-sdks/archive/master.zip) zip pack.
+Download [Nashlink plugins and sdks](https://github.com/nash-io/nashlink-plugins-and-sdks/archive/main.zip) zip pack.
 
 * Extract the downloaded zip pack
 * The plugin is at unziped folder plugin-woocommerce-checkout/nashlink/
