@@ -6,9 +6,12 @@ This is a checkout plugin for WooCommerce. Get your online store ready to offer 
   
 It requires you first installs and configure WooCommerce plugin on your wordpress instance.  
   
-After get WooCommerce up and running all you need is to access your wordpress computer instance via ftp or ssh to copy the plugin directory.  
+After get WooCommerce up and running you are able to install nashlink checkout.  
   
-Manual installs only requires you to copy the nashlink/ checkout plugin directory to <wordpress_data_path>/wp-content/plugins/
+Download the latest nashlink woocomerce checkout distribution here [nashlink woocommerce checkout](https://github.com/nash-io/nashlink-plugins-and-sdks/plugin-woocommerce-checkout/dist/woocommerce-nashlink.zip)
   
-After that, you can enable the plugin on admin interface to start with nash link.  
+Log in on you woocommerce instance as admin. Go to Plugins -> Add New -> Browse -> woocommerce-nashlink.zip  
   
+After that, you can enable the plugin on admin interface(wordpress plugin and woocomerce payment choice).  
+  
+You can use the same process to update to newer versions.  
