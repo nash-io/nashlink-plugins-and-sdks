@@ -67,7 +67,7 @@ It requires you first installs and configure WooCommerce plugin on your wordpres
   
 After get WooCommerce up and running you are able to install nashlink checkout.  
   
-Download the latest nashlink woocomerce checkout distribution here [nashlink woocommerce checkout](https://github.com/nash-io/nashlink-plugins-and-sdks/plugin-woocommerce-checkout/dist/woocommerce-nashlink.zip)
+Download the latest nashlink woocomerce checkout distribution here [nashlink woocommerce checkout](https://github.com/nash-io/nashlink-plugins-and-sdks/raw/main/plugin-woocommerce-checkout/dist/woocommerce-nashlink.zip)
   
 Log in on you woocommerce instance as admin. Go to Plugins -> Add New -> Browse -> woocommerce-nashlink.zip  
   
