@@ -3,7 +3,7 @@
  * Plugin Name: Nash Link Checkout for WooCommerce
  * Plugin URI: https://link.nash.io
  * Description: Bitcoin and cryptocurrency payments powered by Nash
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Nash
  * Author URI: mailto:contact@nash.io?subject=payments Checkout for WooCommerce
  */
@@ -232,6 +232,13 @@ function wc_nashlink_checkout_gateway_init()
             
             public function init_form_fields()
             {
+                $wc_statuses_arr = wc_get_order_statuses();
+                unset($wc_statuses_arr['wc-cancelled']);
+                unset($wc_statuses_arr['wc-refunded']);
+                unset($wc_statuses_arr['wc-failed']);
+                #add an ignore option
+                $wc_statuses_arr['nashlink-ignore'] = "Do not change status";
+                
                 $this->form_fields = array(
                     'enabled' => array(
                         'title' => __('Enable/Disable', 'woocommerce'),
@@ -318,6 +325,20 @@ function wc_nashlink_checkout_gateway_init()
                         'title' => __('Error handling', 'woocommerce'),
                         'type' => 'text',
                         'description' => __('If there is an error with creting the invoice, enter the <b>page slug</b>. <br>ie. ' . get_home_url() . '/<b>error</b><br><br>View your pages <a target = "_blank" href  = "/wp-admin/edit.php?post_type=page">here</a>,.<br><br>Click the "quick edit" and copy and paste a custom slug here.', 'woocommerce'),
+                    ),
+                    'nashlink_checkout_order_process_confirmed_status' => array(
+                        'title' => __('Nash Link Confirmed Invoice Status', 'woocommerce'),
+                        'type' => 'select',
+                        'description' => __('Map the Nash Link <b>paid</b> invoice status to one of the available WooCommerce order states.<br>All WooCommerce status options are listed here for your convenience.', 'woocommerce'),
+                       'options' =>$wc_statuses_arr,
+                        'default' => 'wc-processing',
+                    ),
+                    'nashlink_checkout_order_process_complete_status' => array(
+                        'title' => __('Nash Link Complete Invoice Status', 'woocommerce'),
+                        'type' => 'select',
+                        'description' => __('Map the Nash Link <b>complete</b> invoice status to one of the available WooCommerce order states.<br>All WooCommerce status options are listed here for your convenience.', 'woocommerce'),
+                       'options' =>$wc_statuses_arr,
+                        'default' => 'wc-processing',
                     ),
                     'nashlink_checkout_order_expired_status' => array(
                         'title' => __('Nash Link Expired Status', 'woocommerce'),
@@ -517,6 +538,8 @@ function nashlink_checkout_ipn(WP_REST_Request $request)
     if (nashlink_checkout_get_order_transaction($orderid, $invoiceID) == 1):
       
         $nashlink_checkout_options = get_option('woocommerce_nashlink_checkout_gateway_settings');
+        $nashlink_checkout_order_process_confirmed_status = $nashlink_checkout_options['nashlink_checkout_order_process_confirmed_status'];        
+        $nashlink_checkout_order_process_complete_status = $nashlink_checkout_options['nashlink_checkout_order_process_complete_status'];
         $nashlink_checkout_order_expired_status = $nashlink_checkout_options['nashlink_checkout_order_expired_status'];
 
         $nashlink_checkout_environment = $nashlink_checkout_options['nashlink_checkout_environment'];
@@ -543,25 +566,47 @@ function nashlink_checkout_ipn(WP_REST_Request $request)
         $note_set = null;
              
         nashlink_checkout_update_order_note($orderid, $invoiceID, $order_status);
+        $wc_statuses_arr = wc_get_order_statuses();
+        $wc_statuses_arr['nashlink-ignore'] = "Do not change status";
 
         switch ($order_status) {
          
             case 'paid':
-                $order_status = 'wc-processing';
-                $order->add_order_note('Nash Link Invoice ID: <a target = "_blank" href = "' . $api->getServerUri() . "/invoices/" . $invoiceID . '">' . $invoiceID . '</a> is processing');
-                $order->update_status($order_status, __('Nash Link payment processing', 'woocommerce'));
+                if($nashlink_checkout_order_process_confirmed_status !='nashlink-ignore'):
+                    $lbl = $wc_statuses_arr[$nashlink_checkout_order_process_confirmed_status];
+                    if(!isset($lbl)):
+                        $lbl = "Processing";
+                        $nashlink_checkout_order_process_confirmed_status = 'wc-processing';
+                    endif;
+    
+                    $order->add_order_note('Nash Link Invoice ID: <a target = "_blank" href = "' . $api->getServerUri() . "/invoices/" . $invoiceID . '">' . $invoiceID . '</a> is confirmed and processing');
+                    $order_status =$nashlink_checkout_order_process_confirmed_status;
+                    $order->update_status($order_status, __('Nash Link payment processing', 'woocommerce'));
+                else:
+                    $order->add_order_note('Nash Link Invoice ID: <a target = "_blank" href = "' . $api->getServerUri() . "/invoices/" . $invoiceID . '">' . $invoiceID . '</a> is confirmed and processing. The order status has not been updated due to your settings.');    
+                endif;
                 WC()->cart->empty_cart();
                 wc_reduce_stock_levels($orderid);
                 break;
 
             case 'complete':
-                $order_status = 'wc-completed';
-                $order->add_order_note('Nash Link Invoice ID: <a target = "_blank" href = "' . $api->getServerUri() . "/invoices/" . $invoiceID . '">' . $invoiceID . '</a> has been paid.');
-                $order->update_status($order_status, __('Nash Link payment completed', 'woocommerce'));
-                // Reduce stock levels
-                wc_reduce_stock_levels($orderid);
-                // Remove cart
-                WC()->cart->empty_cart();
+                if($nashlink_checkout_order_process_complete_status !='nashlink-ignore'):
+                    $lbl = $wc_statuses_arr[$nashlink_checkout_order_process_complete_status];
+                    if(!isset($lbl)):
+                        $lbl = "Processing";
+                        $nashlink_checkout_order_process_complete_status = 'wc-processing';
+                    endif;
+                    
+                    $order_status =$nashlink_checkout_order_process_complete_status;
+                    $order->add_order_note('Nash Link Invoice ID: <a target = "_blank" href = "' . $api->getServerUri() . "/invoices/" . $invoiceID . '">' . $invoiceID . '</a> has been paid.');
+                    $order->update_status($order_status, __('Nash Link payment completed', 'woocommerce'));
+                    // Reduce stock levels
+                    wc_reduce_stock_levels($orderid);
+                    // Remove cart
+                    WC()->cart->empty_cart();
+                else:
+                    $order->add_order_note('Nash Link Invoice ID: <a target = "_blank" href = "' . $api->getServerUri() . "/invoices/" . $invoiceID . '">' . $invoiceID . '</a> has been paid. The order status has not been updated due to your settings.');
+                endif;
                 break;
 
             case 'expired':
