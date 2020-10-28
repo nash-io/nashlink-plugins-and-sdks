@@ -128,9 +128,9 @@ print(str(response['data']))
 
 We provide well-maintained SDKs for several programming languages. These are a slim layer to simplify API access (in particular, request signing):
 
-* <a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/master/sdk-node-typescript" target="_blank">Node.js / TypeScript</a>
-* <a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/master/sdk-php" target="_blank">PHP</a>
-* <a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/master/sdk-python" target="_blank">Python</a>
+* <a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/sdk-node-typescript" target="_blank">Node.js / TypeScript</a>
+* <a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/sdk-php" target="_blank">PHP</a>
+* <a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/sdk-python" target="_blank">Python</a>
 
 # Making requests
 
