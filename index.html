@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <link rel="icon" href='https://docs-link.nash.io/images/favicon.png' />
 </head>
-<body class="index" data-languages="[ &#34;javascript&#34; ,  &#34;php&#34; ]">
+<body class="index" data-languages="[ &#34;javascript&#34; ,  &#34;php&#34; ,  &#34;python&#34; ]">
     <a href="#" id="nav-button">
         <span>
         NAV
@@ -64,6 +64,8 @@ document.addEventListener('DOMContentLoaded', function () {
             <a href="#" data-language-name="javascript">JavaScript</a>
             
             <a href="#" data-language-name="php">PHP</a>
+            
+            <a href="#" data-language-name="python">Python</a>
             
         </div>
         
@@ -201,6 +203,25 @@ $invoice_data <span style="color:#f92672">=</span> <span style="color:#66d9ef">a
 
 <span style="color:#75715e">// created invoice data
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">var_dump</span>($response[<span style="color:#e6db74">&#39;data&#39;</span>])
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> nashlink <span style="color:#f92672">import</span> nashlink
+
+<span style="color:#75715e"># instantiate api</span>
+<span style="color:#75715e"># use &#39;sandbox&#39; for integration tests</span>
+<span style="color:#75715e"># use &#39;prod&#39; for final production environment</span>
+nashlink_api <span style="color:#f92672">=</span> nashlink<span style="color:#f92672">.</span>Api(<span style="color:#e6db74">&#39;sandbox&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>)
+<span style="color:#75715e"># setup order data for the invoice</span>
+invoice <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;price&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;currency&#39;</span>: <span style="color:#e6db74">&#39;EUR&#39;</span>}
+<span style="color:#75715e"># create the invoice</span>
+response <span style="color:#f92672">=</span> nashlink_api<span style="color:#f92672">.</span>create_invoice(invoice)
+
+<span style="color:#75715e"># check for errors</span>
+<span style="color:#66d9ef">if</span> response[<span style="color:#e6db74">&#39;error&#39;</span>]:
+    <span style="color:#66d9ef">print</span>(response[<span style="color:#e6db74">&#39;message&#39;</span>])
+    <span style="color:#66d9ef">print</span>(response[<span style="color:#e6db74">&#39;status_code&#39;</span>])
+    exit()
+
+<span style="color:#75715e"># created invoice data</span>
+<span style="color:#66d9ef">print</span>(str(response[<span style="color:#e6db74">&#39;data&#39;</span>]))
 </code></pre></div><blockquote>
 <p>Getting an invoice data with our SDK:</p>
 </blockquote>
@@ -227,11 +248,28 @@ $api <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span>
 
 <span style="color:#75715e">// invoice data
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">var_dump</span>($response[<span style="color:#e6db74">&#39;data&#39;</span>])
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> nashlink <span style="color:#f92672">import</span> nashlink
+
+<span style="color:#75715e"># instantiate api</span>
+<span style="color:#75715e"># use &#39;sandbox&#39; for integration tests</span>
+<span style="color:#75715e"># use &#39;prod&#39; for final production environment</span>
+nashlink_api <span style="color:#f92672">=</span> nashlink<span style="color:#f92672">.</span>Api(<span style="color:#e6db74">&#39;sandbox&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>)
+<span style="color:#75715e"># get a invoice</span>
+response <span style="color:#f92672">=</span> nashlink_api<span style="color:#f92672">.</span>get_invoice(<span style="color:#e6db74">&#39;&lt;INVOICE_ID&gt;&#39;</span>)
+
+<span style="color:#75715e"># check for errors</span>
+<span style="color:#66d9ef">if</span> response[<span style="color:#e6db74">&#39;error&#39;</span>]:
+    <span style="color:#66d9ef">print</span>(response[<span style="color:#e6db74">&#39;message&#39;</span>])
+    <span style="color:#66d9ef">print</span>(response[<span style="color:#e6db74">&#39;status_code&#39;</span>])
+    exit()
+
+<span style="color:#75715e"># invoice data</span>
+<span style="color:#66d9ef">print</span>(str(response[<span style="color:#e6db74">&#39;data&#39;</span>]))
 </code></pre></div><p>We provide well-maintained SDKs for several programming languages. These are a slim layer to simplify API access (in particular, request signing):</p>
 <ul>
-<li><a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/master/sdk-node-typescript" target="_blank">Node.js / TypeScript</a></li>
-<li><a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/master/sdk-php" target="_blank">PHP</a></li>
-<li>Python (TODO)</li>
+<li><a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/sdk-node-typescript" target="_blank">Node.js / TypeScript</a></li>
+<li><a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/sdk-php" target="_blank">PHP</a></li>
+<li><a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/sdk-python" target="_blank">Python</a></li>
 </ul>
 <h1 id="making-requests">Making requests</h1>
 <h2 id="api-urls">API URLs</h2>
@@ -643,6 +681,8 @@ Note: Cryptocurrency amounts are always in the smallest unit of any specific cur
                 <a href="#" data-language-name="javascript">JavaScript</a>
                 
                 <a href="#" data-language-name="php">PHP</a>
+                
+                <a href="#" data-language-name="python">Python</a>
                 
             </div>
             
