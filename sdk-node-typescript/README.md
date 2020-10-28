@@ -32,7 +32,7 @@ const invoiceCreateResponse = await api.createInvoice({
 const invoiceGetResponse = await api.getInvoice(invoiceId)
 ```
 
-Take a look at the [examples](https://github.com/nash-io/nashlink-plugins-and-sdks/tree/master/sdk-node-typescript/examples), for instance [`invoice-create-and-get.ts`](https://github.com/nash-io/nashlink-plugins-and-sdks/blob/master/sdk-node-typescript/examples/invoice-create-and-get.ts).
+Take a look at the [examples](https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/sdk-node-typescript/examples), for instance [`invoice-create-and-get.ts`](https://github.com/nash-io/nashlink-plugins-and-sdks/blob/main/sdk-node-typescript/examples/invoice-create-and-get.ts).
 
 You can run this example like this:
 
@@ -45,8 +45,8 @@ $ ts-node examples/invoice-create-and-get.ts
 
 These are the two main files:
 
-* [`sdk.ts`](https://github.com/nash-io/nashlink-plugins-and-sdks/blob/master/sdk-node-typescript/src/sdk.ts)
-* [`sdk.test.ts`](https://github.com/nash-io/nashlink-plugins-and-sdks/blob/master/sdk-node-typescript/src/sdk.test.ts)
+* [`sdk.ts`](https://github.com/nash-io/nashlink-plugins-and-sdks/blob/main/sdk-node-typescript/src/sdk.ts)
+* [`sdk.test.ts`](https://github.com/nash-io/nashlink-plugins-and-sdks/blob/main/sdk-node-typescript/src/sdk.test.ts)
 
 Often used yarn commands:
 

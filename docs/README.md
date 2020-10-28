@@ -17,7 +17,7 @@ Documentation for content creation:
 ## Getting Started
 
 * Uses [hugo](https://gohugo.io/getting-started/installing/) (`v0.72.0+`) with the [docuapi](https://github.com/bep/docuapi/) theme
-* The documentation content in markdown format is located in [`/content/`](https://github.com/nash-io/nashlink-plugins-and-sdks/tree/master/docs/content)
+* The documentation content in markdown format is located in [`/content/`](https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/docs/content)
 
 Start with Docker:
 
