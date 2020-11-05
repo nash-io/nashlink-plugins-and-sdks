@@ -148,7 +148,7 @@ Note: You need to use an API key created for the specific environment.
 All authenticated requests need to include the following HTTP headers:
 
 * `x-identity`: your API key
-* `x-signature`: the signature, as described <a href="?javascript#signing-requests">here</a>
+* `x-signature`: the signature, as described <a href="#signing-requests">here</a>
 
 ## Signing requests
 
