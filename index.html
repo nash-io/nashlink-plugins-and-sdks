@@ -112,9 +112,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 
                     <ul class="toc-list-h2">
                         
+                            <li><a href="#invoice-states" class="toc-h2 toc-link" data-title="Invoice states">Invoice states</a></li>
+                        
                             <li><a href="#create-an-invoice" class="toc-h2 toc-link" data-title="Create an invoice">Create an invoice</a></li>
                         
                             <li><a href="#get-an-invoice" class="toc-h2 toc-link" data-title="Get an invoice">Get an invoice</a></li>
+                        
+                            <li><a href="#trigger-webhook" class="toc-h2 toc-link" data-title="Trigger webhook">Trigger webhook</a></li>
+                        
+                            <li><a href="#invoice-webhooks" class="toc-h2 toc-link" data-title="Invoice webhooks">Invoice webhooks</a></li>
                         
                     </ul>
                 
@@ -144,6 +150,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             <li><a href="#magento-2" class="toc-h2 toc-link" data-title="Magento 2">Magento 2</a></li>
                         
                             <li><a href="#woocommerce" class="toc-h2 toc-link" data-title="WooCommerce">WooCommerce</a></li>
+                        
+                            <li><a href="#prestashop" class="toc-h2 toc-link" data-title="Prestashop">Prestashop</a></li>
                         
                     </ul>
                 
@@ -283,7 +291,7 @@ response <span style="color:#f92672">=</span> nashlink_api<span style="color:#f9
 <p>All authenticated requests need to include the following HTTP headers:</p>
 <ul>
 <li><code>x-identity</code>: your API key</li>
-<li><code>x-signature</code>: the signature, as described <a href="?javascript#signing-requests">here</a></li>
+<li><code>x-signature</code>: the signature, as described <a href="#signing-requests">here</a></li>
 </ul>
 <h2 id="signing-requests">Signing requests</h2>
 <blockquote>
@@ -308,6 +316,20 @@ response <span style="color:#f92672">=</span> nashlink_api<span style="color:#f9
         <h1 id="invoice-api">Invoice API</h1>
 <p>The invoice is the main data structure for payments. When a user wants to pay with Nash Link, the merchant
 creates an invoice for the specified amount and can optionally include further fields, such as internal order ID, redirect URL and many others.</p>
+<h2 id="invoice-states">Invoice states</h2>
+<p>A Nash Link invoice can be in one of the following states. After each state transition a webhook is sent to the merchant callback URL, as described <a href="#invoice-webhooks">here</a>.</p>
+<p><code>new</code></p>
+<p>An invoice starts in the <code>new</code> state. Payments made to this invoice have a 20 minute window to be confirmed on the blockchain.</p>
+<p><code>paid</code></p>
+<p>After a payment was detected on the blockchain, an invoice is marked as <code>paid</code>. This is a transition state and the invoice will become either <code>expired</code> or <code>complete</code>.</p>
+<p><code>complete</code></p>
+<p>If the full payment made to an invoice has been confirmed on the blockchain during the confirmation window, the invoice is marked as <code>complete</code>. The merchant will be credited the invoice amount on the next payout.</p>
+<p><code>expired</code></p>
+<p>An invoice is marked as <code>expired</code> if the payment wasn&rsquo;t made in full or confirmed on the blockchain in time. All payments received will be automatically refunded.</p>
+<p><b>See also:</b></p>
+<ul>
+<li><a href="#invoice-webhooks">Invoice webhooks</a></li>
+</ul>
 <h2 id="create-an-invoice">Create an invoice</h2>
 <p><code>POST /invoices</code></p>
 <pre><code>POST /invoices
@@ -321,13 +343,13 @@ Response:
 
 &lt;InvoiceObject&gt;
 </code></pre><blockquote>
-<p>See also: <a href="?javascript#invoice"><code>Invoice</code> object documentation</a></p>
+<p>See also: <a href="#invoice"><code>Invoice</code> object documentation</a></p>
 </blockquote>
 <h3 id="request-headers">Request headers</h3>
 <ul>
 <li><code>content-type</code>: <code>application/json</code></li>
 <li><code>x-identity</code>: your API key</li>
-<li><code>x-signature</code>: the signature, as described <a href="?javascript#signing-requests">here</a></li>
+<li><code>x-signature</code>: the signature, as described <a href="#signing-requests">here</a></li>
 </ul>
 <h3 id="request-body-json">Request body (JSON)</h3>
 <p><strong>Mandatory fields</strong></p>
@@ -396,7 +418,7 @@ Response:
 </tbody>
 </table>
 <h3 id="response">Response</h3>
-<p>An <code>Invoice</code> object as described in the <a href="?javascript#invoice"><code>Invoice</code> object documentation</a>.</p>
+<p>An <code>Invoice</code> object as described in the <a href="#invoice"><code>Invoice</code> object documentation</a>.</p>
 <h2 id="get-an-invoice">Get an invoice</h2>
 <p><code>GET /invoices/&lt;invoiceId&gt;</code></p>
 <pre><code>GET /invoices/JDBtJCFV
@@ -405,16 +427,48 @@ Response:
 
 &lt;InvoiceObject&gt;
 </code></pre><blockquote>
-<p>see also: <a href="?javascript#invoice"><code>Invoice</code> object documentation</a></p>
+<p>see also: <a href="#invoice"><code>Invoice</code> object documentation</a></p>
 </blockquote>
 <h3 id="request-headers-1">Request headers</h3>
 <ul>
 <li><code>content-type</code>: <code>application/json</code></li>
 <li><code>x-identity</code>: your API key</li>
-<li><code>x-signature</code>: the signature, as described <a href="?javascript#signing-requests">here</a></li>
+<li><code>x-signature</code>: the signature, as described <a href="#signing-requests">here</a></li>
 </ul>
 <h3 id="response-1">Response</h3>
-<p>Invoice object as described in the <a href="?javascript#invoice"><code>Invoice</code> object documentation</a></p>
+<p>Invoice object as described in the <a href="#invoice"><code>Invoice</code> object documentation</a></p>
+<h2 id="trigger-webhook">Trigger webhook</h2>
+<p><code>GET /invoices/&lt;invoiceId&gt;/trigger_webhook</code></p>
+<pre><code>GET /invoices/JDBtJCFV/trigger_webhook
+
+Response:
+
+{ &quot;sent&quot;: true }
+</code></pre><h3 id="request-headers-2">Request headers</h3>
+<ul>
+<li><code>content-type</code>: <code>application/json</code></li>
+<li><code>x-identity</code>: your API key</li>
+<li><code>x-signature</code>: the signature, as described <a href="#signing-requests">here</a></li>
+</ul>
+<h3 id="response-2">Response</h3>
+<p>The following JSON payload: <code>{ &quot;sent&quot;: true }</code></p>
+<h2 id="invoice-webhooks">Invoice webhooks</h2>
+<p>After each <a href="#invoice-states">invoice state</a> transition, a POST request is sent to the <code>notificationURL</code> field provided when creating the invoice. No webhook is sent when the invoice is created.</p>
+<p>If a request fails, we retry the webhook up to 20 times, waiting <code>5min * attempt</code> between retries.</p>
+<p>You can also manually trigger the latest webhook call for an invoice by calling the <a href="#trigger-webhook">Trigger webhook endpoint</a>.</p>
+<aside class="notice">
+Note: To prevent eavesdropping, we recommend securing your callback URL by using SSL and providing a secret parameter appended to the callback URL. We send the payload to the unaltered URL, which allows you to check on your server that the parameter was not modified.
+</aside>
+<h3 id="request-headers-3">Request headers</h3>
+<ul>
+<li><code>content-type</code>: <code>application/json</code></li>
+</ul>
+<h3 id="request-body-json-1">Request body (JSON)</h3>
+<p>Invoice object as described in the <a href="#invoice"><code>Invoice</code> object documentation</a></p>
+<p><b>See also:</b></p>
+<ul>
+<li><a href="#invoice-states">Invoice states</a></li>
+</ul>
 
     
         <h1 id="resources">Resources</h1>
@@ -590,7 +644,7 @@ Note: Cryptocurrency amounts are always in the smallest unit of any specific cur
 </tr>
 </tbody>
 </table>
-<p>See also:</p>
+<p><b>See also:</b></p>
 <ul>
 <li><a href="https://bitpay.com/api/#rest-api-resources-invoices-resource" target="_blank">BitPay invoice documentation</a></li>
 </ul>
@@ -670,6 +724,12 @@ Note: Cryptocurrency amounts are always in the smallest unit of any specific cur
 <p>Log in on you woocommerce instance as admin. Go to Plugins -&gt; Add New -&gt; Browse -&gt; woocommerce-nashlink.zip</p>
 <p>After that, you can enable the plugin on admin interface(wordpress plugin and woocomerce payment choice).</p>
 <p>You can use the same process to update to newer versions.</p>
+<h2 id="prestashop">Prestashop</h2>
+<p>Download the latest nashlink prestashop checkout distribution here <a href="https://github.com/nash-io/nashlink-plugins-and-sdks/raw/main/plugin-prestashop-checkout/dist/prestashop-nashlink.zip">nashlink prestashop checkout</a></p>
+<p>Log in on you prestashop instance as admin. Go to Modules -&gt; Module Manager -&gt; Upload a module -&gt; Select file -&gt; prestashop-nashlink.zip</p>
+<p>Click Install</p>
+<h3 id="configure">Configure</h3>
+<p>Just after finishing installing Nash Link module, you can click &ldquo;configure&rdquo; for the setup.</p>
 
     
 

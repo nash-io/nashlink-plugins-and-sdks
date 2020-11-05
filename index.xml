@@ -30,9 +30,7 @@ Introduction Payment sequence Click to enlarge:
       
       <guid>https://docs-link.nash.io/2-invoices/</guid>
       <description>Invoice API The invoice is the main data structure for payments. When a user wants to pay with Nash Link, the merchant creates an invoice for the specified amount and can optionally include further fields, such as internal order ID, redirect URL and many others.
-Create an invoice POST /invoices
-POST /invoices { &amp;quot;price&amp;quot;: 40, &amp;quot;currency&amp;quot;: &amp;quot;EUR&amp;quot; } Response: &amp;lt;InvoiceObject&amp;gt;  See also: Invoice object documentation
- Request headers  content-type: application/json x-identity: your API key x-signature: the signature, as described here  Request body (JSON) Mandatory fields</description>
+Invoice states A Nash Link invoice can be in one of the following states. After each state transition a webhook is sent to the merchant callback URL, as described here.</description>
     </item>
     
     <item>
