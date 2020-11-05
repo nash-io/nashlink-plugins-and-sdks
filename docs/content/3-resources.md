@@ -84,6 +84,6 @@ Name | Type | Description
 `paymentWalletBlockchain` | string | Wallet blockchain
 `paymentCodes` | object | URI for sending a transaction to the invoice
 
-See also:
+<b>See also:</b>
 
 * <a href="https://bitpay.com/api/#rest-api-resources-invoices-resource" target="_blank">BitPay invoice documentation</a>
