@@ -75,3 +75,17 @@ After that, you can enable the plugin on admin interface(wordpress plugin and wo
   
 You can use the same process to update to newer versions.  
   
+## Prestashop
+
+Download the latest nashlink prestashop checkout distribution here [nashlink prestashop checkout](https://github.com/nash-io/nashlink-plugins-and-sdks/raw/main/plugin-prestashop-checkout/dist/prestashop-nashlink.zip)
+  
+Log in on you prestashop instance as admin. Go to Modules -> Module Manager -> Upload a module -> Select file -> prestashop-nashlink.zip  
+     
+Click Install
+
+### Configure
+
+Just after finishing installing Nash Link module, you can click "configure" for the setup.
+  
+
+
