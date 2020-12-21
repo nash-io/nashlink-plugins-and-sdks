@@ -95,7 +95,7 @@ Name | Type | Description
 Note: Cryptocurrency amounts are always in the smallest unit of any specific currency (for instance, in case of Bitcoin, amounts are always denominated in satoshis).
 </aside>
 
-## Invoice payment sequence 
+## Payment sequence 
 
 Click to enlarge:
 
@@ -162,12 +162,6 @@ We provide well-maintained SDKs for several programming languages. These are a s
 
 <a href="#sdks">Read more</a>
 
-## Rest API Access
-
-Nash link provides a standards-based REST interface which enables application developers to interact in a powerful, yet secure way with their Nash link account.  
-
-<a href="#rest-api">Read more</a>
-
 ## E-commerce
 
 We also provide well-maintained plugins for some well-know ecommerce frameworks. The easiest way to start using Nash link if you have any of those ecommerce platforms.
@@ -177,3 +171,9 @@ We also provide well-maintained plugins for some well-know ecommerce frameworks.
 * <a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/plugin-woocommerce-checkout" target="_blank">Woocommerce</a>
 
 <a href="#e-commerce-plugins">Read more</a>
+
+## Rest API Access
+
+Nash link provides a standards-based REST interface which enables application developers to interact in a powerful, yet secure way with their Nash link account.  
+
+<a href="#rest-api">Read more</a>
