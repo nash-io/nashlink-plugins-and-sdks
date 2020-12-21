@@ -95,10 +95,6 @@ Name | Type | Description
 Note: Cryptocurrency amounts are always in the smallest unit of any specific currency (for instance, in case of Bitcoin, amounts are always denominated in satoshis).
 </aside>
 
-<b>See also:</b>
-
-* <a href="https://bitpay.com/api/#rest-api-resources-invoices-resource" target="_blank">BitPay invoice documentation</a>
-
 ## Invoice payment sequence 
 
 Click to enlarge:
@@ -170,8 +166,6 @@ We provide well-maintained SDKs for several programming languages. These are a s
 
 Nash link provides a standards-based REST interface which enables application developers to interact in a powerful, yet secure way with their Nash link account.  
 
-Our REST API is highly compatible with <a href="https://bitpay.com/api" target="_blank">BitPay</a> and <a href="https://btcpayserver.org/" target="_blank">BTCPay</a>. It allows developers to interact with Nash Link securely for creating invoices as a merchant and retrieving invoices as a user.
-  
 <a href="#rest-api">Read more</a>
 
 ## E-commerce
