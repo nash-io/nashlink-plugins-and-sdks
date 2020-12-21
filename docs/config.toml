@@ -38,16 +38,16 @@ search = true
 # name = "Shell"
 [[params.language_tabs]]
 key = "javascript"
-name = "JavaScript"
+name = "TypeScript"
 [[params.language_tabs]]
 key = "php"
 name = "PHP"
 [[params.language_tabs]]
 key = "python"
 name = "Python"
-# [[params.language_tabs]]
-# key = "python"
-# name = "Python"
+[[params.language_tabs]]
+key = "shell"
+name = "Shell"
 
 #Languages
 [languages]
