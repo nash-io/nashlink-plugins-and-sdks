@@ -3,23 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://docs-link.nash.io/1-main/</loc>
+    <loc>https://docs-link.nash.io/1-introduction/</loc>
   </url>
   
   <url>
-    <loc>https://docs-link.nash.io/2-invoices/</loc>
+    <loc>https://docs-link.nash.io/2-sdks/</loc>
   </url>
   
   <url>
-    <loc>https://docs-link.nash.io/3-resources/</loc>
+    <loc>https://docs-link.nash.io/3-plugins/</loc>
   </url>
   
   <url>
-    <loc>https://docs-link.nash.io/4-errors/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs-link.nash.io/5-plugins/</loc>
+    <loc>https://docs-link.nash.io/4-rest-api/</loc>
   </url>
   
   <url>

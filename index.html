@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <link rel="icon" href='https://docs-link.nash.io/images/favicon.png' />
 </head>
-<body class="index" data-languages="[ &#34;javascript&#34; ,  &#34;php&#34; ,  &#34;python&#34; ]">
+<body class="index" data-languages="[ &#34;javascript&#34; ,  &#34;php&#34; ,  &#34;python&#34; ,  &#34;shell&#34; ]">
     <a href="#" id="nav-button">
         <span>
         NAV
@@ -61,11 +61,13 @@ document.addEventListener('DOMContentLoaded', function () {
         
         <div class="lang-selector">
             
-            <a href="#" data-language-name="javascript">JavaScript</a>
+            <a href="#" data-language-name="javascript">TypeScript</a>
             
             <a href="#" data-language-name="php">PHP</a>
             
             <a href="#" data-language-name="python">Python</a>
+            
+            <a href="#" data-language-name="shell">Shell</a>
             
         </div>
         
@@ -84,61 +86,36 @@ document.addEventListener('DOMContentLoaded', function () {
                 
                     <ul class="toc-list-h2">
                         
+                            <li><a href="#invoice" class="toc-h2 toc-link" data-title="Invoice">Invoice</a></li>
+                        
                             <li><a href="#payment-sequence" class="toc-h2 toc-link" data-title="Payment sequence">Payment sequence</a></li>
-                        
-                            <li><a href="#sdks" class="toc-h2 toc-link" data-title="SDKs">SDKs</a></li>
-                        
-                    </ul>
-                
-            </li>
-        
-            <li>
-                <a href="#making-requests" class="toc-h1 toc-link" data-title="Making requests">Making requests</a>
-                
-                    <ul class="toc-list-h2">
-                        
-                            <li><a href="#api-urls" class="toc-h2 toc-link" data-title="API URLs">API URLs</a></li>
-                        
-                            <li><a href="#request-headers" class="toc-h2 toc-link" data-title="Request headers">Request headers</a></li>
-                        
-                            <li><a href="#signing-requests" class="toc-h2 toc-link" data-title="Signing requests">Signing requests</a></li>
-                        
-                    </ul>
-                
-            </li>
-        
-            <li>
-                <a href="#invoice-api" class="toc-h1 toc-link" data-title="Invoice API">Invoice API</a>
-                
-                    <ul class="toc-list-h2">
                         
                             <li><a href="#invoice-states" class="toc-h2 toc-link" data-title="Invoice states">Invoice states</a></li>
                         
-                            <li><a href="#create-an-invoice" class="toc-h2 toc-link" data-title="Create an invoice">Create an invoice</a></li>
+                            <li><a href="#errors" class="toc-h2 toc-link" data-title="Errors">Errors</a></li>
                         
-                            <li><a href="#get-an-invoice" class="toc-h2 toc-link" data-title="Get an invoice">Get an invoice</a></li>
+                            <li><a href="#activating-api-access" class="toc-h2 toc-link" data-title="Activating API Access">Activating API Access</a></li>
                         
-                            <li><a href="#trigger-webhook" class="toc-h2 toc-link" data-title="Trigger webhook">Trigger webhook</a></li>
+                            <li><a href="#our-sdks" class="toc-h2 toc-link" data-title="Our SDKs">Our SDKs</a></li>
                         
-                            <li><a href="#invoice-webhooks" class="toc-h2 toc-link" data-title="Invoice webhooks">Invoice webhooks</a></li>
+                            <li><a href="#e-commerce" class="toc-h2 toc-link" data-title="E-commerce">E-commerce</a></li>
+                        
+                            <li><a href="#rest-api-access" class="toc-h2 toc-link" data-title="Rest API Access">Rest API Access</a></li>
                         
                     </ul>
                 
             </li>
         
             <li>
-                <a href="#resources" class="toc-h1 toc-link" data-title="Resources">Resources</a>
+                <a href="#sdks" class="toc-h1 toc-link" data-title="SDKs">SDKs</a>
                 
                     <ul class="toc-list-h2">
                         
-                            <li><a href="#invoice" class="toc-h2 toc-link" data-title="Invoice">Invoice</a></li>
+                            <li><a href="#create-a-invoice" class="toc-h2 toc-link" data-title="Create a invoice">Create a invoice</a></li>
+                        
+                            <li><a href="#get-a-invoice" class="toc-h2 toc-link" data-title="Get a invoice">Get a invoice</a></li>
                         
                     </ul>
-                
-            </li>
-        
-            <li>
-                <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
                 
             </li>
         
@@ -152,6 +129,33 @@ document.addEventListener('DOMContentLoaded', function () {
                             <li><a href="#woocommerce" class="toc-h2 toc-link" data-title="WooCommerce">WooCommerce</a></li>
                         
                             <li><a href="#prestashop" class="toc-h2 toc-link" data-title="Prestashop">Prestashop</a></li>
+                        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                <a href="#rest-api" class="toc-h1 toc-link" data-title="Rest API">Rest API</a>
+                
+                    <ul class="toc-list-h2">
+                        
+                            <li><a href="#api-urls" class="toc-h2 toc-link" data-title="API URLs">API URLs</a></li>
+                        
+                            <li><a href="#request-headers" class="toc-h2 toc-link" data-title="Request headers">Request headers</a></li>
+                        
+                            <li><a href="#signing-requests" class="toc-h2 toc-link" data-title="Signing requests">Signing requests</a></li>
+                        
+                            <li><a href="#create-an-invoice" class="toc-h2 toc-link" data-title="Create an invoice">Create an invoice</a></li>
+                        
+                            <li><a href="#get-an-invoice" class="toc-h2 toc-link" data-title="Get an invoice">Get an invoice</a></li>
+                        
+                            <li><a href="#invoice-webhooks" class="toc-h2 toc-link" data-title="Invoice webhooks">Invoice webhooks</a></li>
+                        
+                            <li><a href="#setup-a-webhook-endpoint" class="toc-h2 toc-link" data-title="Setup a webhook endpoint">Setup a webhook endpoint</a></li>
+                        
+                            <li><a href="#receiving-webhook-data" class="toc-h2 toc-link" data-title="Receiving webhook data">Receiving webhook data</a></li>
+                        
+                            <li><a href="#trigger-webhook" class="toc-h2 toc-link" data-title="Trigger webhook">Trigger webhook</a></li>
                         
                     </ul>
                 
@@ -171,309 +175,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
             
     
-        <p>Welcome to the Nash Link API!</p>
-<p>This REST API is highly compatible with <a href="https://bitpay.com/api" target="_blank">BitPay</a> and <a href="https://btcpayserver.org/" target="_blank">BTCPay</a>. It allows developers to interact with Nash Link securely for creating invoices as a merchant and retrieving invoices as a user.</p>
-<h1 id="introduction">Introduction</h1>
-<h2 id="payment-sequence">Payment sequence</h2>
-<p>Click to enlarge:</p>
-<figure>
-    <img src="https://docs-link.nash.io/images/payment-sequence.png"/> 
-</figure>
-
-<h2 id="sdks">SDKs</h2>
-<blockquote>
-<p>Creating an invoice with our SDK:</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">NashLinkApi</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@neon-exchange/nash-link&#39;</span>
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">api</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">NashLinkApi</span>(<span style="color:#e6db74">&#39;sandbox&#39;</span>, <span style="color:#e6db74">`&lt;YOUR_API_KEY&gt;`</span>, <span style="color:#e6db74">`&lt;YOUR_API_SECRET_KEY&gt;`</span>)
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">invoiceResponse</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">createInvoice</span>({
-  <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>
-  <span style="color:#a6e22e">currency</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;EUR&#39;</span>
-})
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-<span style="color:#66d9ef">require_once</span> <span style="color:#e6db74">&#39;NashLinkApi.php&#39;</span>;
-
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Nash\Link\NashLinkApi</span>;
-
-$api <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">NashLinkApi</span>(<span style="color:#e6db74">&#39;sandbox&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>);
-$invoice_data <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#34;price&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#34;currency&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;EUR&#34;</span>);
-
-<span style="color:#75715e">// create the invoice
-</span><span style="color:#75715e"></span>$response <span style="color:#f92672">=</span> $api<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">createInvoice</span>($invoice_data);
-
-<span style="color:#75715e">// check for errors
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ($response[<span style="color:#e6db74">&#39;error&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#66d9ef">true</span>) {
-  <span style="color:#66d9ef">print</span> $response[<span style="color:#e6db74">&#39;message&#39;</span>];
-  <span style="color:#66d9ef">print</span> $response[<span style="color:#e6db74">&#39;status_code&#39;</span>];
-  <span style="color:#66d9ef">return</span>;
-}
-
-<span style="color:#75715e">// created invoice data
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">var_dump</span>($response[<span style="color:#e6db74">&#39;data&#39;</span>])
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> nashlink <span style="color:#f92672">import</span> nashlink
-
-<span style="color:#75715e"># instantiate api</span>
-<span style="color:#75715e"># use &#39;sandbox&#39; for integration tests</span>
-<span style="color:#75715e"># use &#39;prod&#39; for final production environment</span>
-nashlink_api <span style="color:#f92672">=</span> nashlink<span style="color:#f92672">.</span>Api(<span style="color:#e6db74">&#39;sandbox&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>)
-<span style="color:#75715e"># setup order data for the invoice</span>
-invoice <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;price&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;currency&#39;</span>: <span style="color:#e6db74">&#39;EUR&#39;</span>}
-<span style="color:#75715e"># create the invoice</span>
-response <span style="color:#f92672">=</span> nashlink_api<span style="color:#f92672">.</span>create_invoice(invoice)
-
-<span style="color:#75715e"># check for errors</span>
-<span style="color:#66d9ef">if</span> response[<span style="color:#e6db74">&#39;error&#39;</span>]:
-    <span style="color:#66d9ef">print</span>(response[<span style="color:#e6db74">&#39;message&#39;</span>])
-    <span style="color:#66d9ef">print</span>(response[<span style="color:#e6db74">&#39;status_code&#39;</span>])
-    exit()
-
-<span style="color:#75715e"># created invoice data</span>
-<span style="color:#66d9ef">print</span>(str(response[<span style="color:#e6db74">&#39;data&#39;</span>]))
-</code></pre></div><blockquote>
-<p>Getting an invoice data with our SDK:</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">NashLinkApi</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@neon-exchange/nash-link&#39;</span>
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">api</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">NashLinkApi</span>(<span style="color:#e6db74">&#39;sandbox&#39;</span>, <span style="color:#e6db74">`&lt;YOUR_API_KEY&gt;`</span>, <span style="color:#e6db74">`&lt;YOUR_API_SECRET_KEY&gt;`</span>)
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">invoiceResponse</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">getInvoice</span>(<span style="color:#e6db74">&#39;&lt;INVOICE_ID&gt;&#39;</span>)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-<span style="color:#66d9ef">require_once</span> <span style="color:#e6db74">&#39;NashLinkApi.php&#39;</span>;
-
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Nash\Link\NashLinkApi</span>;
-
-$api <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">NashLinkApi</span>(<span style="color:#e6db74">&#39;sandbox&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>);
-
-<span style="color:#75715e">// get the invoice
-</span><span style="color:#75715e"></span>$response <span style="color:#f92672">=</span> $api<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getInvoice</span>(<span style="color:#e6db74">&#39;&lt;INVOICE_ID&gt;&#39;</span>);
-
-<span style="color:#75715e">// check for errors
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ($response[<span style="color:#e6db74">&#39;error&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#66d9ef">true</span>) {
-  <span style="color:#66d9ef">print</span> $response[<span style="color:#e6db74">&#39;message&#39;</span>];
-  <span style="color:#66d9ef">print</span> $response[<span style="color:#e6db74">&#39;status_code&#39;</span>];
-  <span style="color:#66d9ef">return</span>;
-}
-
-<span style="color:#75715e">// invoice data
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">var_dump</span>($response[<span style="color:#e6db74">&#39;data&#39;</span>])
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> nashlink <span style="color:#f92672">import</span> nashlink
-
-<span style="color:#75715e"># instantiate api</span>
-<span style="color:#75715e"># use &#39;sandbox&#39; for integration tests</span>
-<span style="color:#75715e"># use &#39;prod&#39; for final production environment</span>
-nashlink_api <span style="color:#f92672">=</span> nashlink<span style="color:#f92672">.</span>Api(<span style="color:#e6db74">&#39;sandbox&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>)
-<span style="color:#75715e"># get a invoice</span>
-response <span style="color:#f92672">=</span> nashlink_api<span style="color:#f92672">.</span>get_invoice(<span style="color:#e6db74">&#39;&lt;INVOICE_ID&gt;&#39;</span>)
-
-<span style="color:#75715e"># check for errors</span>
-<span style="color:#66d9ef">if</span> response[<span style="color:#e6db74">&#39;error&#39;</span>]:
-    <span style="color:#66d9ef">print</span>(response[<span style="color:#e6db74">&#39;message&#39;</span>])
-    <span style="color:#66d9ef">print</span>(response[<span style="color:#e6db74">&#39;status_code&#39;</span>])
-    exit()
-
-<span style="color:#75715e"># invoice data</span>
-<span style="color:#66d9ef">print</span>(str(response[<span style="color:#e6db74">&#39;data&#39;</span>]))
-</code></pre></div><p>We provide well-maintained SDKs for several programming languages. These are a slim layer to simplify API access (in particular, request signing):</p>
-<ul>
-<li><a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/sdk-node-typescript" target="_blank">Node.js / TypeScript</a></li>
-<li><a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/sdk-php" target="_blank">PHP</a></li>
-<li><a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/sdk-python" target="_blank">Python</a></li>
-</ul>
-<h1 id="making-requests">Making requests</h1>
-<h2 id="api-urls">API URLs</h2>
-<p>The Nash Link API base URLs are:</p>
-<ul>
-<li><code>https://link.nash.io/api/v1/sandbox</code> for sandbox</li>
-<li><code>https://link.nash.io/api/v1/prod</code> for production</li>
-</ul>
-<p>Note: You need to use an API key created for the specific environment.</p>
-<h2 id="request-headers">Request headers</h2>
-<p>All authenticated requests need to include the following HTTP headers:</p>
-<ul>
-<li><code>x-identity</code>: your API key</li>
-<li><code>x-signature</code>: the signature, as described <a href="#signing-requests">here</a></li>
-</ul>
-<h2 id="signing-requests">Signing requests</h2>
-<blockquote>
-<p>You can use our SDK to create the signature:</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">signRequest</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@neon-exchange/nash-link&#39;</span>
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://link.nash.io/api/v1/sandbox/invoices&#34;</span>
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">40</span>, <span style="color:#a6e22e">currency</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;EUR&#34;</span> }
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">signingResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">signRequest</span>({ <span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">body</span>, <span style="color:#a6e22e">secretKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`&lt;YOUR_API_SECRET_KEY&gt;`</span> })
-</code></pre></div><p>Authenticated requests need to be signed with the API secret key. You need to concatenate the URL with the request body, create a HMAC-SHA256 signature, then send this as the <code>x-signature</code> header.</p>
-<aside class="notice">If you use <a href="#sdks">our SDKs</a> you don’t need to sign requests manually.</aside>
-<p>For example, say you wish to send a request to <code>https://link.nash.io/api/v1/sandbox/invoices</code> with this payload:</p>
-<p><code>{ &quot;price&quot;: 40, &quot;currency&quot;: &quot;EUR&quot; }</code></p>
-<p>You’d concatenate the URL and request body like this:</p>
-<p><code>https://link.nash.io/api/v1/sandbox/invoices{&quot;price&quot;:40,&quot;currency&quot;:&quot;EUR&quot;}</code></p>
-<p>This string is then signed using <a href="https://en.wikipedia.org/wiki/HMAC" target="_blank">HMAC-SHA256</a> and the API secret key.</p>
-<p>The resulting signature needs to be sent in the <code>x-signature</code> HTTP header.</p>
-<p>If you want to implement the signing yourself, take a look at our <a href="#sdks">example code</a>.</p>
-
-    
-        <h1 id="invoice-api">Invoice API</h1>
+        <h1 id="introduction">Introduction</h1>
+<p>The Nash Link Payment Gateway API is designed for merchants that need full control over their customers’ shopping and checkout experience or for single person who wants to bill in crypto, receive in fiat.</p>
+<p>There are four interactions with the Nash Link service that this API enables:</p>
+<p>● create an invoice<br>
+● fetch an invoice<br>
+● receive invoice status (via webhook call from nash link backend on each invoice status change)<br>
+● trigger a webhook</p>
+<h2 id="invoice">Invoice</h2>
 <p>The invoice is the main data structure for payments. When a user wants to pay with Nash Link, the merchant
 creates an invoice for the specified amount and can optionally include further fields, such as internal order ID, redirect URL and many others.</p>
-<h2 id="invoice-states">Invoice states</h2>
-<p>A Nash Link invoice can be in one of the following states. After each state transition a webhook is sent to the merchant callback URL, as described <a href="#invoice-webhooks">here</a>.</p>
-<p><code>new</code></p>
-<p>An invoice starts in the <code>new</code> state. Payments made to this invoice have a 20 minute window to be confirmed on the blockchain.</p>
-<p><code>paid</code></p>
-<p>After a payment was detected on the blockchain, an invoice is marked as <code>paid</code>. This is a transition state and the invoice will become either <code>expired</code> or <code>complete</code>.</p>
-<p><code>complete</code></p>
-<p>If the full payment made to an invoice has been confirmed on the blockchain during the confirmation window, the invoice is marked as <code>complete</code>. The merchant will be credited the invoice amount on the next payout.</p>
-<p><code>expired</code></p>
-<p>An invoice is marked as <code>expired</code> if the payment wasn&rsquo;t made in full or confirmed on the blockchain in time. All payments received will be automatically refunded.</p>
-<p><b>See also:</b></p>
-<ul>
-<li><a href="#invoice-webhooks">Invoice webhooks</a></li>
-</ul>
-<h2 id="create-an-invoice">Create an invoice</h2>
-<p><code>POST /invoices</code></p>
-<pre><code>POST /invoices
-
-{
-    &quot;price&quot;: 40,
-    &quot;currency&quot;: &quot;EUR&quot;
-}
-
-Response:
-
-&lt;InvoiceObject&gt;
-</code></pre><blockquote>
-<p>See also: <a href="#invoice"><code>Invoice</code> object documentation</a></p>
-</blockquote>
-<h3 id="request-headers">Request headers</h3>
-<ul>
-<li><code>content-type</code>: <code>application/json</code></li>
-<li><code>x-identity</code>: your API key</li>
-<li><code>x-signature</code>: the signature, as described <a href="#signing-requests">here</a></li>
-</ul>
-<h3 id="request-body-json">Request body (JSON)</h3>
-<p><strong>Mandatory fields</strong></p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>price</code></td>
-<td>number</td>
-<td>Amount in fiat</td>
-</tr>
-<tr>
-<td><code>currency</code></td>
-<td>string</td>
-<td>Fiat currency, in ISO 4217 3-character currency code. Must be <code>EUR</code> currently.</td>
-</tr>
-</tbody>
-</table>
-<br>
-<p><strong>Optional fields</strong></p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>orderId</code></td>
-<td>string</td>
-<td>Merchant order reference ID</td>
-</tr>
-<tr>
-<td><code>itemDesc</code></td>
-<td>string</td>
-<td>Description of the purchase</td>
-</tr>
-<tr>
-<td><code>posData</code></td>
-<td>string</td>
-<td>Passthru variable for Merchant internal use</td>
-</tr>
-<tr>
-<td><code>notificationEmail</code></td>
-<td>string</td>
-<td>Email address of the merchant to receive notifications about invoice status changes</td>
-</tr>
-<tr>
-<td><code>notificationURL</code></td>
-<td>string</td>
-<td>URL of the merchant backend to receive webhooks relating to invoice status changes</td>
-</tr>
-<tr>
-<td><code>redirectURL</code></td>
-<td>string</td>
-<td>URL to redirect the user to after a successful purchase</td>
-</tr>
-</tbody>
-</table>
-<h3 id="response">Response</h3>
-<p>An <code>Invoice</code> object as described in the <a href="#invoice"><code>Invoice</code> object documentation</a>.</p>
-<h2 id="get-an-invoice">Get an invoice</h2>
-<p><code>GET /invoices/&lt;invoiceId&gt;</code></p>
-<pre><code>GET /invoices/JDBtJCFV
-
-Response:
-
-&lt;InvoiceObject&gt;
-</code></pre><blockquote>
-<p>see also: <a href="#invoice"><code>Invoice</code> object documentation</a></p>
-</blockquote>
-<h3 id="request-headers-1">Request headers</h3>
-<ul>
-<li><code>content-type</code>: <code>application/json</code></li>
-<li><code>x-identity</code>: your API key</li>
-<li><code>x-signature</code>: the signature, as described <a href="#signing-requests">here</a></li>
-</ul>
-<h3 id="response-1">Response</h3>
-<p>Invoice object as described in the <a href="#invoice"><code>Invoice</code> object documentation</a></p>
-<h2 id="trigger-webhook">Trigger webhook</h2>
-<p><code>GET /invoices/&lt;invoiceId&gt;/trigger_webhook</code></p>
-<pre><code>GET /invoices/JDBtJCFV/trigger_webhook
-
-Response:
-
-{ &quot;sent&quot;: true }
-</code></pre><h3 id="request-headers-2">Request headers</h3>
-<ul>
-<li><code>content-type</code>: <code>application/json</code></li>
-<li><code>x-identity</code>: your API key</li>
-<li><code>x-signature</code>: the signature, as described <a href="#signing-requests">here</a></li>
-</ul>
-<h3 id="response-2">Response</h3>
-<p>The following JSON payload: <code>{ &quot;sent&quot;: true }</code></p>
-<h2 id="invoice-webhooks">Invoice webhooks</h2>
-<p>After each <a href="#invoice-states">invoice state</a> transition, a POST request is sent to the <code>notificationURL</code> field provided when creating the invoice. No webhook is sent when the invoice is created.</p>
-<p>If a request fails, we retry the webhook up to 20 times, waiting <code>5min * attempt</code> between retries.</p>
-<p>You can also manually trigger the latest webhook call for an invoice by calling the <a href="#trigger-webhook">Trigger webhook endpoint</a>.</p>
-<aside class="notice">
-Note: To prevent eavesdropping, we recommend securing your callback URL by using SSL and providing a secret parameter appended to the callback URL. We send the payload to the unaltered URL, which allows you to check on your server that the parameter was not modified.
-</aside>
-<h3 id="request-headers-3">Request headers</h3>
-<ul>
-<li><code>content-type</code>: <code>application/json</code></li>
-</ul>
-<h3 id="request-body-json-1">Request body (JSON)</h3>
-<p>Invoice object as described in the <a href="#invoice"><code>Invoice</code> object documentation</a></p>
-<p><b>See also:</b></p>
-<ul>
-<li><a href="#invoice-states">Invoice states</a></li>
-</ul>
-
-    
-        <h1 id="resources">Resources</h1>
-<p>This section describes all the data structures used by the Nash Link API in detail.</p>
-<h2 id="invoice">Invoice</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;facade&#34;</span>: <span style="color:#e6db74">&#34;merchant/invoice&#34;</span>,
   <span style="color:#f92672">&#34;data&#34;</span>: {
@@ -515,9 +226,6 @@ Note: To prevent eavesdropping, we recommend securing your callback URL by using
   }
 }
 </code></pre></div><p><strong>Data fields</strong></p>
-<aside class="notice">
-Note: Cryptocurrency amounts are always in the smallest unit of any specific currency (for instance, in case of Bitcoin, amounts are always denominated in satoshis).
-</aside>
 <table>
 <thead>
 <tr>
@@ -644,13 +352,30 @@ Note: Cryptocurrency amounts are always in the smallest unit of any specific cur
 </tr>
 </tbody>
 </table>
+<aside class="notice">
+Note: Cryptocurrency amounts are always in the smallest unit of any specific currency (for instance, in case of Bitcoin, amounts are always denominated in satoshis).
+</aside>
+<h2 id="payment-sequence">Payment sequence</h2>
+<p>Click to enlarge:</p>
+<figure>
+    <img src="https://docs-link.nash.io/images/payment-sequence.png"/> 
+</figure>
+
+<h2 id="invoice-states">Invoice states</h2>
+<p>A Nash Link invoice can be in one of the following states. After each state transition a webhook is sent to the merchant callback URL, as described <a href="#invoice-webhooks">here</a>.</p>
+<p><code>new</code></p>
+<p>An invoice starts in the <code>new</code> state. Payments made to this invoice have a 20 minute window to be confirmed on the blockchain.</p>
+<p><code>paid</code></p>
+<p>After a payment was detected on the blockchain, an invoice is marked as <code>paid</code>. This is a transition state and the invoice will become either <code>expired</code> or <code>complete</code>.</p>
+<p><code>complete</code></p>
+<p>If the full payment made to an invoice has been confirmed on the blockchain during the confirmation window, the invoice is marked as <code>complete</code>. The merchant will be credited the invoice amount on the next payout.</p>
+<p><code>expired</code></p>
+<p>An invoice is marked as <code>expired</code> if the payment wasn&rsquo;t made in full or confirmed on the blockchain in time. All payments received will be automatically refunded.</p>
 <p><b>See also:</b></p>
 <ul>
-<li><a href="https://bitpay.com/api/#rest-api-resources-invoices-resource" target="_blank">BitPay invoice documentation</a></li>
+<li><a href="#invoice-webhooks">Invoice webhooks</a></li>
 </ul>
-
-    
-        <h1 id="errors">Errors</h1>
+<h2 id="errors">Errors</h2>
 <p>The Nash Link API uses the following error codes:</p>
 <table>
 <thead>
@@ -682,6 +407,147 @@ Note: Cryptocurrency amounts are always in the smallest unit of any specific cur
 </tr>
 </tbody>
 </table>
+<h2 id="activating-api-access">Activating API Access</h2>
+<p>The merchant must obtain an API key from the Nash link web app to get access to the API calls.</p>
+<p>The API generation/revoke actions are accessible at <a href="https://link.nash.io/developers/">https://link.nash.io/developers/</a>.</p>
+<p>A merchant can create multiple keys for use with different e-commerce stores or API functions.</p>
+<p>Once an API key has been created, Nash link will use this API key to authenticate your API connections.</p>
+<p>The merchant’s API key must remain private and should never be visible on any client-facing code.</p>
+<p>Should it ever be compromised, the merchant can generate a new key in their BitPay account.</p>
+<h2 id="our-sdks">Our SDKs</h2>
+<p>We provide well-maintained SDKs for several programming languages. These are a slim layer to simplify API access (in particular, request signing):</p>
+<ul>
+<li><a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/sdk-node-typescript" target="_blank">Node.js / TypeScript</a></li>
+<li><a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/sdk-php" target="_blank">PHP</a></li>
+<li><a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/sdk-python" target="_blank">Python</a></li>
+</ul>
+<p><a href="#sdks">Read more</a></p>
+<h2 id="e-commerce">E-commerce</h2>
+<p>We also provide well-maintained plugins for some well-know ecommerce frameworks. The easiest way to start using Nash link if you have any of those ecommerce platforms.</p>
+<ul>
+<li><a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/plugin-magento2-checkout" target="_blank">Magento 2</a></li>
+<li><a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/plugin-prestashop-checkout" target="_blank">Prestashop</a></li>
+<li><a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/plugin-woocommerce-checkout" target="_blank">Woocommerce</a></li>
+</ul>
+<p><a href="#e-commerce-plugins">Read more</a></p>
+<h2 id="rest-api-access">Rest API Access</h2>
+<p>Nash link provides a standards-based REST interface which enables application developers to interact in a powerful, yet secure way with their Nash link account.</p>
+<p><a href="#rest-api">Read more</a></p>
+
+    
+        <h1 id="sdks">SDKs</h1>
+<p>To start using a SDK, simply download and follow instructions:</p>
+<ul>
+<li><a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/sdk-node-typescript" target="_blank">Node.js / TypeScript</a></li>
+<li><a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/sdk-php" target="_blank">PHP</a></li>
+<li><a href="https://github.com/nash-io/nashlink-plugins-and-sdks/tree/main/sdk-python" target="_blank">Python</a></li>
+</ul>
+<h2 id="create-a-invoice">Create a invoice</h2>
+<p>Creating a invoice in a few lines of code.</p>
+<blockquote>
+<p>Creating an invoice with our SDK:</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">NashLinkApi</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@neon-exchange/nash-link&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">api</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">NashLinkApi</span>(<span style="color:#e6db74">&#39;sandbox&#39;</span>, <span style="color:#e6db74">`&lt;YOUR_API_KEY&gt;`</span>, <span style="color:#e6db74">`&lt;YOUR_API_SECRET_KEY&gt;`</span>)
+
+<span style="color:#75715e">// create the invoice
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">invoiceResponse</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">createInvoice</span>({
+  <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>
+  <span style="color:#a6e22e">currency</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;EUR&#39;</span>
+})
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">require_once</span> <span style="color:#e6db74">&#39;NashLinkApi.php&#39;</span>;
+
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Nash\Link\NashLinkApi</span>;
+
+$api <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">NashLinkApi</span>(<span style="color:#e6db74">&#39;sandbox&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>);
+$invoice_data <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#34;price&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#34;currency&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;EUR&#34;</span>);
+
+<span style="color:#75715e">// create the invoice
+</span><span style="color:#75715e"></span>$response <span style="color:#f92672">=</span> $api<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">createInvoice</span>($invoice_data);
+
+<span style="color:#75715e">// check for errors
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ($response[<span style="color:#e6db74">&#39;error&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#66d9ef">true</span>) {
+  <span style="color:#66d9ef">print</span> $response[<span style="color:#e6db74">&#39;message&#39;</span>];
+  <span style="color:#66d9ef">print</span> $response[<span style="color:#e6db74">&#39;status_code&#39;</span>];
+  <span style="color:#66d9ef">return</span>;
+}
+
+<span style="color:#75715e">// created invoice data
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">var_dump</span>($response[<span style="color:#e6db74">&#39;data&#39;</span>])
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> nashlink <span style="color:#f92672">import</span> nashlink
+
+<span style="color:#75715e"># instantiate api</span>
+<span style="color:#75715e"># use &#39;sandbox&#39; for integration tests</span>
+<span style="color:#75715e"># use &#39;prod&#39; for final production environment</span>
+nashlink_api <span style="color:#f92672">=</span> nashlink<span style="color:#f92672">.</span>Api(<span style="color:#e6db74">&#39;sandbox&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>)
+<span style="color:#75715e"># setup order data for the invoice</span>
+invoice <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;price&#39;</span>: <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;currency&#39;</span>: <span style="color:#e6db74">&#39;EUR&#39;</span>}
+<span style="color:#75715e"># create the invoice</span>
+response <span style="color:#f92672">=</span> nashlink_api<span style="color:#f92672">.</span>create_invoice(invoice)
+
+<span style="color:#75715e"># check for errors</span>
+<span style="color:#66d9ef">if</span> response[<span style="color:#e6db74">&#39;error&#39;</span>]:
+    <span style="color:#66d9ef">print</span>(response[<span style="color:#e6db74">&#39;message&#39;</span>])
+    <span style="color:#66d9ef">print</span>(response[<span style="color:#e6db74">&#39;status_code&#39;</span>])
+    exit()
+
+<span style="color:#75715e"># created invoice data</span>
+<span style="color:#66d9ef">print</span>(str(response[<span style="color:#e6db74">&#39;data&#39;</span>]))
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># there is no shell sdk, use it for REST API access.</span>
+</code></pre></div><blockquote>
+<p>Returns <a href="#invoice"><code>Invoice</code> object</a> or <a href="#erros">Error status/message</a></p>
+</blockquote>
+<h2 id="get-a-invoice">Get a invoice</h2>
+<p>Getting a invoice in a few lines of code.</p>
+<blockquote>
+<p>Getting an invoice data with our SDK:</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">NashLinkApi</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@neon-exchange/nash-link&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">api</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">NashLinkApi</span>(<span style="color:#e6db74">&#39;sandbox&#39;</span>, <span style="color:#e6db74">`&lt;YOUR_API_KEY&gt;`</span>, <span style="color:#e6db74">`&lt;YOUR_API_SECRET_KEY&gt;`</span>)
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">invoiceResponse</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">getInvoice</span>(<span style="color:#e6db74">&#39;&lt;INVOICE_ID&gt;&#39;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">require_once</span> <span style="color:#e6db74">&#39;NashLinkApi.php&#39;</span>;
+
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Nash\Link\NashLinkApi</span>;
+
+$api <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">NashLinkApi</span>(<span style="color:#e6db74">&#39;sandbox&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>);
+
+<span style="color:#75715e">// get the invoice
+</span><span style="color:#75715e"></span>$response <span style="color:#f92672">=</span> $api<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getInvoice</span>(<span style="color:#e6db74">&#39;&lt;INVOICE_ID&gt;&#39;</span>);
+
+<span style="color:#75715e">// check for errors
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ($response[<span style="color:#e6db74">&#39;error&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#66d9ef">true</span>) {
+  <span style="color:#66d9ef">print</span> $response[<span style="color:#e6db74">&#39;message&#39;</span>];
+  <span style="color:#66d9ef">print</span> $response[<span style="color:#e6db74">&#39;status_code&#39;</span>];
+  <span style="color:#66d9ef">return</span>;
+}
+
+<span style="color:#75715e">// invoice data
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">var_dump</span>($response[<span style="color:#e6db74">&#39;data&#39;</span>])
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> nashlink <span style="color:#f92672">import</span> nashlink
+
+<span style="color:#75715e"># instantiate api</span>
+<span style="color:#75715e"># use &#39;sandbox&#39; for integration tests</span>
+<span style="color:#75715e"># use &#39;prod&#39; for final production environment</span>
+nashlink_api <span style="color:#f92672">=</span> nashlink<span style="color:#f92672">.</span>Api(<span style="color:#e6db74">&#39;sandbox&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>, <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>)
+<span style="color:#75715e"># get a invoice</span>
+response <span style="color:#f92672">=</span> nashlink_api<span style="color:#f92672">.</span>get_invoice(<span style="color:#e6db74">&#39;&lt;INVOICE_ID&gt;&#39;</span>)
+
+<span style="color:#75715e"># check for errors</span>
+<span style="color:#66d9ef">if</span> response[<span style="color:#e6db74">&#39;error&#39;</span>]:
+    <span style="color:#66d9ef">print</span>(response[<span style="color:#e6db74">&#39;message&#39;</span>])
+    <span style="color:#66d9ef">print</span>(response[<span style="color:#e6db74">&#39;status_code&#39;</span>])
+    exit()
+
+<span style="color:#75715e"># invoice data</span>
+<span style="color:#66d9ef">print</span>(str(response[<span style="color:#e6db74">&#39;data&#39;</span>]))
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># there is no shell sdk, use it for REST API access.</span>
+</code></pre></div><blockquote>
+<p>Returns <a href="#invoice"><code>Invoice</code> object</a> or <a href="#erros">Error status/message</a></p>
+</blockquote>
 
     
         <h1 id="e-commerce-plugins">E-Commerce Plugins</h1>
@@ -732,17 +598,372 @@ Note: Cryptocurrency amounts are always in the smallest unit of any specific cur
 <p>Just after finishing installing Nash Link module, you can click &ldquo;configure&rdquo; for the setup.</p>
 
     
+        <h1 id="rest-api">Rest API</h1>
+<p>Nash link provides a standards-based REST interface which enables application developers to interact in a powerful, yet secure way with their Nash link account. Developers may call the API directly over HTTPS using the language of their choice, or take advantage of one of Nash link code libraries (Javascript, Python and PHP).</p>
+<p>For a shell environment we higly recommends curl, openssl and sed to sign requests.</p>
+<h2 id="api-urls">API URLs</h2>
+<p>The Nash Link API base URLs are:</p>
+<ul>
+<li><code>https://link.nash.io/api/v1/sandbox</code> for sandbox</li>
+<li><code>https://link.nash.io/api/v1/prod</code> for production</li>
+</ul>
+<p>Note: You need to use an API key created for the specific environment.</p>
+<h2 id="request-headers">Request headers</h2>
+<p>All authenticated requests need to include the following HTTP headers:</p>
+<ul>
+<li><code>x-identity</code>: your API key</li>
+<li><code>x-signature</code>: the signature, as described <a href="#signing-requests">here</a></li>
+</ul>
+<p>We suggest you to use openssl for signatures since its opensource and widely avaliable over different operational systems.</p>
+<h2 id="signing-requests">Signing requests</h2>
+<blockquote>
+<p>Sign you payload:</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">crypto</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;crypto&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">apiSecretKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">environment</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://link.nash.io/api/v1/sandbox/invoices&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">invoice</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;price&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#34;currency&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;EUR&#34;</span>}
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">payload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">environment</span><span style="color:#f92672">+</span><span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">invoice</span>)
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">signature</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">crypto</span>.<span style="color:#a6e22e">createHmac</span>(<span style="color:#e6db74">&#34;sha256&#34;</span>, <span style="color:#a6e22e">apiSecretKey</span>).<span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">payload</span>).<span style="color:#a6e22e">digest</span>(<span style="color:#e6db74">&#34;hex&#34;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">API_SECRET_KEY</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">ENVIRONMENT</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://link.nash.io/api/v1/sandbox/invoices&#39;</span>;
+
+$invoice_data <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#34;price&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#34;currency&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;EUR&#34;</span>);
+$payload <span style="color:#f92672">=</span> <span style="color:#a6e22e">ENVIRONMENT</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">json_encode</span>($invoice_data)
+$signature <span style="color:#f92672">=</span> <span style="color:#a6e22e">hash_hmac</span>(<span style="color:#e6db74">&#39;sha256&#39;</span>, $payload, <span style="color:#a6e22e">API_SECRET_KEY</span>);
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> hmac
+<span style="color:#f92672">import</span> hashlib
+
+API_SECRET_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>;
+ENVIRONMENT <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://link.nash.io/api/v1/sandbox/invoices&#39;</span>;
+
+invoice <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;price&#39;</span>: <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;currency&#39;</span>: <span style="color:#e6db74">&#39;EUR&#39;</span>}
+payload <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join([ENVIRONMENT,str(json<span style="color:#f92672">.</span>dumps(invoice))])
+signature <span style="color:#f92672">=</span> hmac<span style="color:#f92672">.</span>new(API_SECRET_KEY<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>), 
+                     msg<span style="color:#f92672">=</span>payload<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>),
+                     digestmod<span style="color:#f92672">=</span>hashlib<span style="color:#f92672">.</span>sha256)<span style="color:#f92672">.</span>hexdigest()<span style="color:#f92672">.</span>upper()
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>API_SECRET_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>
+ENVIRONMENT<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://link.nash.io/api/v1/sandbox/invoices&#39;</span>
+
+INVOICE<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{&#34;price&#34;: 10, &#34;currency&#34;: &#34;EUR&#34;}&#39;</span>
+<span style="color:#75715e"># make use of openssl + sed</span>
+SIGNATURE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>echo -n <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>ENVIRONMENT<span style="color:#e6db74">}${</span>INVOICE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> | openssl dgst -sha256 -hmac <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>API_SECRET_KEY<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> | sed <span style="color:#e6db74">&#39;s/(stdin)= //g&#39;</span><span style="color:#e6db74">`</span>
+</code></pre></div><p>Authenticated requests need to be signed with the API secret key. You need to concatenate the URL with the request body, create a HMAC-SHA256 signature, then send this as the <code>x-signature</code> header.</p>
+<aside class="notice">If you use <a href="#sdks">our SDKs</a> you don’t need to sign requests manually.</aside>
+<p>For example, say you wish to send a request to <code>https://link.nash.io/api/v1/sandbox/invoices</code> with this payload:</p>
+<p><code>{ &quot;price&quot;: 10, &quot;currency&quot;: &quot;EUR&quot; }</code></p>
+<p>You’d concatenate the URL and request body like this:</p>
+<p><code>https://link.nash.io/api/v1/sandbox/invoices{&quot;price&quot;: 10, &quot;currency&quot;: &quot;EUR&quot;}</code></p>
+<p>This string is then signed using <a href="https://en.wikipedia.org/wiki/HMAC" target="_blank">HMAC-SHA256</a> and the API secret key.</p>
+<p>The resulting signature needs to be sent in the <code>x-signature</code> HTTP header.</p>
+<h2 id="create-an-invoice">Create an invoice</h2>
+<blockquote>
+<p>Create a Invoice with Rest call:</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">crypto</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;crypto&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">apiKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">apiSecretKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">environment</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://link.nash.io/api/v1/sandbox/invoices&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">invoice</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;price&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#34;currency&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;EUR&#34;</span>}
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">payload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">environment</span><span style="color:#f92672">+</span><span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">invoice</span>)
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">signature</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">crypto</span>.<span style="color:#a6e22e">createHmac</span>(<span style="color:#e6db74">&#34;sha256&#34;</span>, <span style="color:#a6e22e">apiSecretKey</span>).<span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">payload</span>).<span style="color:#a6e22e">digest</span>(<span style="color:#e6db74">&#34;hex&#34;</span>)
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">headers</span> <span style="color:#f92672">=</span> {
+  <span style="color:#e6db74">&#39;Accept&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span>;
+  <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span>,
+  <span style="color:#e6db74">&#39;x-identity&#39;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">apiKey</span>,
+  <span style="color:#e6db74">&#39;x-signature&#39;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">signature</span>
+}
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fetchPromise</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">environment</span>, {
+  <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;post&#39;</span>,
+  <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">data</span>),
+  <span style="color:#a6e22e">headers</span>
+})
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">API_KEY</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">API_SECRET_KEY</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">ENVIRONMENT</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://link.nash.io/api/v1/sandbox/invoices&#39;</span>;
+
+$invoice_data <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#34;price&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#34;currency&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;EUR&#34;</span>);
+$payload <span style="color:#f92672">=</span> <span style="color:#a6e22e">ENVIRONMENT</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">json_encode</span>($invoice_data)
+$signature <span style="color:#f92672">=</span> <span style="color:#a6e22e">hash_hmac</span>(<span style="color:#e6db74">&#39;sha256&#39;</span>, $payload, <span style="color:#a6e22e">API_SECRET_KEY</span>);
+
+$request_headers <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
+$request_headers[] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Accept: application/json&#39;</span>;
+$request_headers[] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span>;
+$request_headers[] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;x-identity: &#39;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">API_KEY</span>;
+$request_headers[] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;x-signature: &#39;</span> <span style="color:#f92672">.</span> $signature;
+
+$ch <span style="color:#f92672">=</span> <span style="color:#a6e22e">curl_init</span>();
+<span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_URL</span>, <span style="color:#a6e22e">ENVIRONMENT</span>);
+<span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_POST</span>, <span style="color:#ae81ff">1</span>);
+<span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_POSTFIELDS</span>, <span style="color:#a6e22e">json_encode</span>($invoice_data));
+<span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_HTTPHEADER</span>, $request_headers);
+<span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_RETURNTRANSFER</span>, <span style="color:#66d9ef">true</span>);
+$result <span style="color:#f92672">=</span> <span style="color:#a6e22e">curl_exec</span>($ch);
+$status_code <span style="color:#f92672">=</span> <span style="color:#a6e22e">curl_getinfo</span>($ch, <span style="color:#a6e22e">CURLINFO_HTTP_CODE</span>);
+<span style="color:#a6e22e">curl_close</span>($ch);
+        
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> hmac
+<span style="color:#f92672">import</span> hashlib
+
+API_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>;
+API_SECRET_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>;
+ENVIRONMENT <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://link.nash.io/api/v1/sandbox/invoices&#39;</span>;
+
+invoice <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;price&#39;</span>: <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;currency&#39;</span>: <span style="color:#e6db74">&#39;EUR&#39;</span>}
+payload <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join([ENVIRONMENT,str(json<span style="color:#f92672">.</span>dumps(invoice))])
+signature <span style="color:#f92672">=</span> hmac<span style="color:#f92672">.</span>new(API_SECRET_KEY<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>), 
+                     msg<span style="color:#f92672">=</span>payload<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>),
+                     digestmod<span style="color:#f92672">=</span>hashlib<span style="color:#f92672">.</span>sha256)<span style="color:#f92672">.</span>hexdigest()<span style="color:#f92672">.</span>upper()
+
+request_headers <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Accept&#39;</span>: <span style="color:#e6db74">&#39;application/json&#39;</span>,
+                   <span style="color:#e6db74">&#39;Content-Type&#39;</span>: <span style="color:#e6db74">&#39;application/json&#39;</span>,
+                   <span style="color:#e6db74">&#39;x-identity&#39;</span>: API_KEY,
+                   <span style="color:#e6db74">&#39;x-signature&#39;</span>: signature}
+
+r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(url<span style="color:#f92672">=</span>ENVIRONMENT, headers<span style="color:#f92672">=</span>request_headers, json<span style="color:#f92672">=</span>invoice)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>API_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>
+API_SECRET_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>
+ENVIRONMENT<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://link.nash.io/api/v1/sandbox/invoices&#39;</span>
+
+INVOICE<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{&#34;price&#34;: 10, &#34;currency&#34;: &#34;EUR&#34;}&#39;</span>
+<span style="color:#75715e"># make use of openssl + sed</span>
+SIGNATURE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>echo -n <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>ENVIRONMENT<span style="color:#e6db74">}${</span>INVOICE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> | openssl dgst -sha256 -hmac <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>API_SECRET_KEY<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> | sed <span style="color:#e6db74">&#39;s/(stdin)= //g&#39;</span><span style="color:#e6db74">`</span>
+
+curl <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#39;Accept: application/json&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;x-identity: </span><span style="color:#e6db74">${</span>API_KEY<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;x-signature: </span><span style="color:#e6db74">${</span>SIGNATURE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>-X POST <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>-d <span style="color:#e6db74">&#34;</span>$INVOICE<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>$ENVIRONMENT
+</code></pre></div><p><code>POST /invoices</code></p>
+<blockquote>
+<p>Returns <a href="#invoice"><code>Invoice</code> object</a> or <a href="#erros">Error status/message</a></p>
+</blockquote>
+<h3 id="request-headers-1">Request headers</h3>
+<ul>
+<li><code>content-type</code>: <code>application/json</code></li>
+<li><code>x-identity</code>: your API key</li>
+<li><code>x-signature</code>: the signature, as described <a href="#signing-requests">here</a></li>
+</ul>
+<h3 id="request-body-json">Request body (JSON)</h3>
+<p><strong>Mandatory fields</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>price</code></td>
+<td>number</td>
+<td>Amount in fiat</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>string</td>
+<td>Fiat currency, in ISO 4217 3-character currency code. Must be <code>EUR</code> currently.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p><strong>Optional fields</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>orderId</code></td>
+<td>string</td>
+<td>Merchant order reference ID</td>
+</tr>
+<tr>
+<td><code>itemDesc</code></td>
+<td>string</td>
+<td>Description of the purchase</td>
+</tr>
+<tr>
+<td><code>posData</code></td>
+<td>string</td>
+<td>Passthru variable for Merchant internal use</td>
+</tr>
+<tr>
+<td><code>notificationEmail</code></td>
+<td>string</td>
+<td>Email address of the merchant to receive notifications about invoice status changes</td>
+</tr>
+<tr>
+<td><code>notificationURL</code></td>
+<td>string</td>
+<td>URL of the merchant backend to enable and receive webhooks relating to invoice status changes</td>
+</tr>
+<tr>
+<td><code>redirectURL</code></td>
+<td>string</td>
+<td>URL to redirect the user to after a successful purchase</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response">Response</h3>
+<p>An <code>Invoice</code> object as described in the <a href="#invoice"><code>Invoice</code> object documentation</a>.</p>
+<h2 id="get-an-invoice">Get an invoice</h2>
+<p><code>GET /invoices/&lt;invoiceId&gt;</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">crypto</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;crypto&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">apiKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">apiSecretKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">environment</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://link.nash.io/api/v1/sandbox/invoices/&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">invoiceId</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;INVOICE_ID&gt;&#39;</span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">payload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">environment</span><span style="color:#f92672">+</span><span style="color:#a6e22e">invoiceId</span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">signature</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">crypto</span>.<span style="color:#a6e22e">createHmac</span>(<span style="color:#e6db74">&#34;sha256&#34;</span>, <span style="color:#a6e22e">apiSecretKey</span>).<span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">payload</span>).<span style="color:#a6e22e">digest</span>(<span style="color:#e6db74">&#34;hex&#34;</span>)
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">headers</span> <span style="color:#f92672">=</span> {
+  <span style="color:#e6db74">&#39;Accept&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span>;
+  <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span>,
+  <span style="color:#e6db74">&#39;x-identity&#39;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">apiKey</span>,
+  <span style="color:#e6db74">&#39;x-signature&#39;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">signature</span>
+}
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fetchPromise</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">environment</span><span style="color:#f92672">+</span><span style="color:#a6e22e">invoiceId</span>, { <span style="color:#a6e22e">headers</span> })
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">API_KEY</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">API_SECRET_KEY</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">ENVIRONMENT</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://link.nash.io/api/v1/sandbox/invoices/&#39;</span>;
+
+$invoice_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;INVOICE_ID&gt;&#39;</span>;
+$payload <span style="color:#f92672">=</span> <span style="color:#a6e22e">ENVIRONMENT</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">invoice_id</span>
+$signature <span style="color:#f92672">=</span> <span style="color:#a6e22e">hash_hmac</span>(<span style="color:#e6db74">&#39;sha256&#39;</span>, $payload, <span style="color:#a6e22e">API_SECRET_KEY</span>);
+
+$request_headers <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
+$request_headers[] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Accept: application/json&#39;</span>;
+$request_headers[] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span>;
+$request_headers[] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;x-identity: &#39;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">API_KEY</span>;
+$request_headers[] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;x-signature: &#39;</span> <span style="color:#f92672">.</span> $signature;
+
+$ch <span style="color:#f92672">=</span> <span style="color:#a6e22e">curl_init</span>();
+<span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_URL</span>, <span style="color:#a6e22e">ENVIRONMENT</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">invoice_id</span>);
+<span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_HTTPHEADER</span>, $request_headers);
+<span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_RETURNTRANSFER</span>, <span style="color:#66d9ef">true</span>);
+$result <span style="color:#f92672">=</span> <span style="color:#a6e22e">curl_exec</span>($ch);
+$status_code <span style="color:#f92672">=</span> <span style="color:#a6e22e">curl_getinfo</span>($ch, <span style="color:#a6e22e">CURLINFO_HTTP_CODE</span>);
+<span style="color:#a6e22e">curl_close</span>($ch);
+        
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> hmac
+<span style="color:#f92672">import</span> hashlib
+
+API_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>;
+API_SECRET_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>;
+ENVIRONMENT <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://link.nash.io/api/v1/sandbox/invoices/&#39;</span>;
+
+invoice_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;INVOICE_ID&gt;&#39;</span>
+payload <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join([ENVIRONMENT,invoice_id])
+signature <span style="color:#f92672">=</span> hmac<span style="color:#f92672">.</span>new(API_SECRET_KEY<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>), 
+                     msg<span style="color:#f92672">=</span>payload<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>),
+                     digestmod<span style="color:#f92672">=</span>hashlib<span style="color:#f92672">.</span>sha256)<span style="color:#f92672">.</span>hexdigest()<span style="color:#f92672">.</span>upper()
+
+request_headers <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Accept&#39;</span>: <span style="color:#e6db74">&#39;application/json&#39;</span>,
+                   <span style="color:#e6db74">&#39;Content-Type&#39;</span>: <span style="color:#e6db74">&#39;application/json&#39;</span>,
+                   <span style="color:#e6db74">&#39;x-identity&#39;</span>: API_KEY,
+                   <span style="color:#e6db74">&#39;x-signature&#39;</span>: signature}
+
+r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join([ENVIRONMENT,invoice_id]), headers<span style="color:#f92672">=</span>request_headers)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>API_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&lt;YOUR_API_KEY&gt;&#39;</span>
+API_SECRET_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&lt;YOUR_API_SECRET_KEY&gt;&#39;</span>
+ENVIRONMENT<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://link.nash.io/api/v1/sandbox/invoices/&#39;</span>
+
+INVOICE_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&lt;INVOICE_ID&gt;&#39;</span>
+<span style="color:#75715e"># make use of openssl + sed</span>
+SIGNATURE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>echo -n <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>ENVIRONMENT<span style="color:#e6db74">}${</span>INVOICE_ID<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> | openssl dgst -sha256 -hmac <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>API_SECRET_KEY<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> | sed <span style="color:#e6db74">&#39;s/(stdin)= //g&#39;</span><span style="color:#e6db74">`</span>
+
+curl <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#39;Accept: application/json&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;x-identity: </span><span style="color:#e6db74">${</span>API_KEY<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;x-signature: </span><span style="color:#e6db74">${</span>SIGNATURE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#e6db74">${</span>ENVIRONMENT<span style="color:#e6db74">}${</span>INVOICE_ID<span style="color:#e6db74">}</span>
+</code></pre></div><blockquote>
+<p>Returns <a href="#invoice"><code>Invoice</code> object</a> or <a href="#erros">Error status/message</a></p>
+</blockquote>
+<h3 id="request-headers-2">Request headers</h3>
+<ul>
+<li><code>content-type</code>: <code>application/json</code></li>
+<li><code>x-identity</code>: your API key</li>
+<li><code>x-signature</code>: the signature, as described <a href="#signing-requests">here</a></li>
+</ul>
+<h3 id="response-1">Response</h3>
+<p>Invoice object as described in the <a href="#invoice"><code>Invoice</code> object documentation</a></p>
+<h3 id="request-headers-3">Request headers</h3>
+<ul>
+<li><code>content-type</code>: <code>application/json</code></li>
+<li><code>x-identity</code>: your API key</li>
+<li><code>x-signature</code>: the signature, as described <a href="#signing-requests">here</a></li>
+</ul>
+<h3 id="response-2">Response</h3>
+<p>The following JSON payload: <code>{ &quot;sent&quot;: true }</code></p>
+<h2 id="invoice-webhooks">Invoice webhooks</h2>
+<p>After each <a href="#invoice-states">invoice state</a> transition, a POST request is sent to the <code>notificationURL</code> field provided when creating the invoice. No webhook is sent when the invoice is created.</p>
+<p>If a request fails, we retry the webhook up to 20 times, waiting <code>5min * attempt</code> between retries.</p>
+<p>You can also manually trigger the latest webhook call for an invoice by calling the <a href="#trigger-webhook">Trigger webhook endpoint</a>.</p>
+<aside class="notice">
+Note: To prevent eavesdropping, we recommend securing your callback URL by using SSL and providing a secret parameter appended to the callback URL. We send the payload to the unaltered URL, which allows you to check on your server that the parameter was not modified.
+</aside>
+<h2 id="setup-a-webhook-endpoint">Setup a webhook endpoint</h2>
+<p>At the creation of invoice, you can setup a webhook url so Nash link servers can callback your merchant server and inform about any invoice status update. To make use of this feature just set <code>notificationURL</code> param with you webhook endpoint.</p>
+<h2 id="receiving-webhook-data">Receiving webhook data</h2>
+<p>When Nash link servers call you merchant webhook endpoint you will receive a <a href="#invoice"><code>Invoice</code> object data</a></p>
+<h2 id="trigger-webhook">Trigger webhook</h2>
+<p><code>GET /invoices/&lt;invoiceId&gt;/trigger_webhook</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GET /invoices/JDBtJCFV/trigger_webhook
+
+Response:
+
+<span style="color:#f92672">{</span> <span style="color:#e6db74">&#34;sent&#34;</span>: true <span style="color:#f92672">}</span>
+</code></pre></div><h3 id="request-headers-4">Request headers</h3>
+<ul>
+<li><code>content-type</code>: <code>application/json</code></li>
+</ul>
+<h3 id="request-body-json-1">Request body (JSON)</h3>
+<p>Invoice object as described in the <a href="#invoice"><code>Invoice</code> object documentation</a></p>
+<p><b>See also:</b></p>
+<ul>
+<li><a href="#invoice-states">Invoice states</a></li>
+</ul>
+
+    
 
         </div>
         <div class="dark-box">
             
             <div class="lang-selector">
                 
-                <a href="#" data-language-name="javascript">JavaScript</a>
+                <a href="#" data-language-name="javascript">TypeScript</a>
                 
                 <a href="#" data-language-name="php">PHP</a>
                 
                 <a href="#" data-language-name="python">Python</a>
+                
+                <a href="#" data-language-name="shell">Shell</a>
                 
             </div>
             
