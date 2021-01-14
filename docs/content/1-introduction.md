@@ -150,7 +150,7 @@ Once an API key has been created, Nash link will use this API key to authenticat
 
 The merchant’s API key must remain private and should never be visible on any client-facing code.
 
-Should it ever be compromised, the merchant can generate a new key in their BitPay account.  
+Should it ever be compromised, the merchant can generate a new key in their Nash Link account.  
 
 ## Our SDKs
 
